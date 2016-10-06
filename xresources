@@ -1,0 +1,323 @@
+!
+! Xorg Resource Properties
+!   scott@smemsh.net
+!   http://smemsh.net/src/.Xresources
+!
+! notes:
+!   - installed-to-server configuration resources
+!   - load in xorg or wm init: xrdb -load or -merge
+!   - use in preference to local-fs-based .Xdefaults
+!   - asof 20151208, only used for URxvt and some Xft defaults
+!
+! syntax:
+!   - WARNING: **NO QUOTES ALLOWED** (even comments!!)
+!   - this file mostly cpp compatible
+!   - XXX TODO what is the actual format? syntax hl says wrong
+!   - some predefined cpp-style macro-constants set by xrdb
+!     XXX TODO which ones? how to find out?
+!
+! good overview, includes all aspects of xorg font config:
+! https://wiki.archlinux.org/index.php/Font_Configuration
+!
+
+!!! RXVT-UNICODE !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+!
+! version when authoring this configuration:
+!
+!    (urxvt) v9.15 - released: 2012-01-21 !!!!!!!!!!!!!!!!!!!!!!!!
+!
+! compile options:
+!    perl,xft,styles,combining,blink,encodings=eu+vn+jp+jp-ext+kr+zh+zh-ext
+!    fade,transparent,tint,pixbuf,XIM,frills,selectionscrolling,wheel,slipwheel
+!    smart-resize,cursorBlink,pointerBlank,scrollbars=plain+rxvt+NeXT+xterm
+!
+
+!!! URXVT RESOURCES !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+!   scrollstyle:        mode
+!   ...
+!   setting to 256color no longer necessary with rxvt-unicode-256color package
+!   (default rxvt-unicode package is not, but works if set manually)
+!   ...
+!
+!URxvt.termName:		rxvt-unicode-256color
+
+!   geometry:           geometry
+URxvt.chdir:		/
+!   reverseVideo:       boolean
+URxvt.loginShell: 	false
+URxvt.jumpScroll:	true
+URxvt.skipScroll:       true
+URxvt.pastableTabs:	false
+URxvt.scrollBar:	false
+!   scrollBar_right:    boolean
+!   scrollBar_floating: boolean
+!   scrollBar_align:    mode
+!   thickness:          number
+URxvt.scrollTtyOutput:	true
+URxvt.scrollTtyKeypress: true
+URxvt.scrollWithBuffer:	true
+URxvt.inheritPixmap:	true
+URxvt.transparent:	false
+!   tintColor:          color
+URxvt.shading:		false
+!   blurRadius:         HxV
+URxvt.fading:		false
+!   fadeColor:          color
+URxvt.utmpInhibit:	false
+URxvt.urgentOnBell:	true
+URxvt.visualBell:	true
+URxvt.mapAlert:		true
+!   meta8:              boolean
+!   mouseWheelScrollPage:   boolean
+!   tripleclickwords:   boolean
+URxvt.insecure:		true
+URxvt.cursorUnderline:	false
+URxvt.cursorBlink:	true
+!   pointerBlank:       boolean
+URxvt.background:	black
+URxvt.foreground:	lightGrey
+!   color0:             color
+!   color1:             color
+!   color2:             color
+!   color3:             color
+!   color4:             color
+!   color5:             color
+!   color6:             color
+URxvt.color7:		lightGrey
+!   color8:             color
+!   color9:             color
+!   color10:            color
+!   color11:            color
+!   color12:            color
+!   color13:            color
+!   color14:            color
+!   color15:            color
+!   underlineColor:     color
+!   scrollColor:        color
+!   troughColor:        color
+URxvt.highlightColor:	yellow
+URxvt.highlightTextColor: blue
+!   cursorColor:        color
+!   cursorColor2:       color
+!   pointerColor:       color
+!   pointerColor2:      color
+!   borderColor:        color
+!   path:               search path
+!   backgroundPixmap:   file[;geom]
+!   iconFile:           file
+!   ...
+!   fonts config below
+!   ...
+!   inputMethod:        name
+!   preeditType:        style
+!   imLocale:           string
+!   imFont:             fontname
+!   title:              string
+!   iconName:           string
+
+! 9.16 introduced a memory change that allocs all mem at once so we get
+! clone() error when urxvtc connects, tracing shows NEW in urxvtd and then
+! -ENOMEM, however we should not care much about this anymore since we are
+! using tmux in all urxvtcs, so we will just eliminate scrollback
+! how it works out --smm20150203095106
+!
+!URxvt.saveLines:	9999999
+URxvt.saveLines:	0
+
+URxvt.depth:		24
+!   buffered:           boolean
+!   transient-for:      windowid
+!   override-redirect:  boolean
+!   hold:               boolean
+!   externalBorder:     number
+!   internalBorder:     number
+URxvt.borderLess:	false
+!   lineSpace:          number
+!   letterSpace:        number
+!   skipBuiltinGlyphs:  boolean
+!   pointerBlankDelay:  number
+!   backspacekey:       string
+!   deletekey:          string
+URxvt.print-pipe:	cat > ~/var/urxvt/dump.$(date +%Y%m%d%H%M%S)
+!   modifier:           modifier
+!   cutchars:           string
+!   answerbackString:   string
+URxvt.secondaryScreen:	true
+URxvt.secondaryScroll:	true
+!   ...
+!   see below section for perl
+!   ...
+!   xrm:                string
+!   keysym.sym:         keysym
+
+!!! URXVT COLORS !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+! see /usr/share/X11/rgb.txt (see showrgb(1))
+!
+! XXX TODO figure out how to put my own symbolic names into
+! the color table used by X, and use them here instead.
+!
+!!! non-bright
+!
+! 0	0	0	black
+! 128	0	0	red
+! 0	128	0	green
+! 128	128	0	yellow
+! 0	0	128	blue
+! 128	0	128	magenta
+! 0	128	128	cyan
+! 192	192	192	white
+!
+!!! bright
+!
+! 128	128	128	black
+! 255	0	0	red
+! 0	255	0	green
+! 255	255	0	yellow
+! 0	0	255	blue
+! 255	0	255	magenta
+! 0	255	255	cyan
+! 255	255	255	white
+!
+!!! straight colors... not all in rgb database symbolically
+!
+! URxvt*color0:		#000000 /* flat black */
+! URxvt*color1:		#800000 /* flat red */
+! URxvt*color2:		#008000 /* flat green */
+! URxvt*color3:		#808000 /* flat yellow */
+! URxvt*color4:		#000080 /* flat blue */
+! URxvt*color5:		#800080 /* flat magenta */
+! URxvt*color6:		#008080 /* flat cyan */
+! URxvt*color7:		#c0c0c0 /* flat white */
+!
+! URxvt*color8:		#808080 /* bold black */
+! URxvt*color9:		#ff0000 /* bold red */
+! URxvt*color10:	#00ff00 /* bold green */
+! URxvt*color11:	#ffff00 /* bold yellow */
+! URxvt*color12:	#0000ff /* bold blue */
+! URxvt*color13:	#ff00ff /* bold magenta */
+! URxvt*color14:	#00ffff /* bold cyan */
+! URxvt*color15:	#ffffff /* bold white */
+
+URxvt.colorBD:		yellow4
+URxvt.colorIT:		orangeRed
+URxvt*colorUL:		cyan
+! URxvt*colorRV:        color
+
+!!! URXVT KEYBOARD HACK !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!
+! todo: we need to do this with xkb (cannot figure out how with xmodmap)
+!       (see /usr/share/X11/xkb/rules/base.lst::option)
+!
+URxvt.keysym.Tab:	builtin
+URxvt.keysym.S-Tab:	\011
+URxvt.keysym.Delete:	\177
+URxvt.keysym.S-BackSpace: \\\
+
+!!! FONTS !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+! Re: Bold: with the small fonts we use on 12.1 inch screen, use of real bold
+! (higher font weight) is just too large for the spacing and chokes it, so we
+! dont use bold weights, substituting high color intensity instead
+!
+! Re: Italic: Inconsolata does not come with an italic font set.  The Freetype
+! autohinter mostly works, but some glyphs (at smaller font sizes) end up
+! falling too far outside the bounding box, so URxvt discards them and falls
+! through to the next font (this affects d, M and X especially), resulting in
+! an ugly patchwork.  There is an InconsolataLGC fork which contains Italic,
+! Greek and Cyrillic (in addition to the usual Latin), but using that only,
+! the glyphs are too small and the spacing is too much when compared to
+! standard Inconsolata, and using InconsolataLGC for normal text just looks
+! totally wrong, for unknown reasons (it looks terrible).  So what we do is
+! set the font preference list for Inconsolata-canonical first, and for those
+! glyphs that end up outside the bounding box, it will fall through to the
+! smaller one that has the italicized glyphs.  This way their shape looks the
+! same and it is only slightly smaller, rather than substituting a totally
+! different font (which URxvt does if we do nothing)
+!
+URxvt.font:		xft:Inconsolata:size=12:
+URxvt.boldFont:		xft:Inconsolata:
+URxvt.italicFont:	xft:Inconsolata:italic:,xft:InconsolataLGC:italic:
+URxvt.bolditalicFont:	xft:Inconsolata:italic:,xft:InconsolataLGC:italic:
+URxvt.intensityStyles:	true
+
+!URxvt.boldFont:	xft:DroidSansMono:bold:
+!URxvt.boldItalicFont:	xft:DroidSansMono:bold:italic:
+!URxvt.intensityStyles:	false
+
+! this tighten-up seems to be needed for anti-aliasing, which seems to make
+! fonts more spacious...
+!
+URxvt.letterSpace:	-1
+
+
+! disable the control-shift unicode entry popup
+!
+URxvt.iso14755:		False
+
+!!! PERL !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!
+!   perl-lib:           string
+!   perl-eval:          perl-eval
+!   perl-ext:
+
+! dynamic font size changes on ctrl-minus and ctrl-plus
+! see ~/.urxvt/ext/font-size
+!
+URxvt.perl-ext-common:	default,font-size
+URxvt.keysym.C-0x2d:	perl:font-size:decrease
+URxvt.keysym.C-0x3d:	perl:font-size:increase
+URxvt.font-size.step:	1
+
+!!!
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!
+! /usr/include/fontconfig/fontconfig.h:
+! 	contains all keynames in Xft namespace!
+!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+!
+! real/true for 1024x768@12.1inch = 106
+! real/true for 1280x1024@17inch = 96
+!
+!Xft.dpi:		96
+Xft.dpi:		106
+
+! these settings are somewhat magical so beware of alteration, in particular
+! - there seems to be conflicting opinion about whether infinality is needed
+! - does autohinting only come into play if font itself does not contain hints?
+! - does hintstyle have any effect when autohinting is disabled?
+! - can subpixel rendering be used with autohinting?
+! - can we just eliminate all fonts which do not have their own hints?
+! - can font-provided hints ever be inferior to using the autohinter?
+! - different panels, and different resolutions, require different settings
+! [1] https://wiki.archlinux.org/index.php/Font_Configuration#Infinality
+!
+Xft.antialias:		true
+Xft.hinting:		true
+Xft*hintstyle:		hintfull
+Xft.autohint:		true
+Xft.rgba:		rgb
+
+!
+Xft.lcdfilter:		lcddefault
+
+! - default for freetype (?)
+! - overridden usually in toolkit config ie gtk
+! - (but not all apps use gtk)
+! - todo: confirm trailing colon actually takes
+!
+Xft.font:		QuattrocentoSans:size=13:
+
+! believe this is horizontal space between lines, well be slightly less
+! TODO verify
+Xft.minspace:		true
+
+! XXX TODO this doesnt work yet, see project in ~/.fonts/
+!
+!URxvt*font:		xft:sun12x22:size=13:medium:roman:
+!

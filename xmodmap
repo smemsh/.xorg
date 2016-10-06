@@ -1,0 +1,73 @@
+!
+! filename: was .xmodmaprc, now .Xmodmap, changed somewhere:
+!
+!  $ grep -sir \\\.xmodmap /etc
+!    /etc/xorg/xinit/xinitrc-common:usermodmap=$HOME/.Xmodmap
+!    /etc/gconf/gconf.xml.defaults/%gconf-tree.xml:
+!    <longdesc>Run xmodmap if .xmodmap/.Xmodmap exists.</longdesc>
+!
+! (although we do not use that, but keeping it aligned with upstream is good)
+!
+! 'clear', 'remove', 'add' deal with modifiers ONLY
+! 'clear' is like 'remove' for all (just wipes it)
+!
+! order: unmodified Shift Mode_switch Mode_switch+Shift
+
+! make capslock key escape
+clear Lock
+keycode 0x42 = Escape Caps_Lock
+
+! shift-capslock -> capslock just doesn't work
+!add Lock = Caps_Lock
+
+keycode 0x17 = Control_L Tab
+keycode 0x33 = Control_R bar
+keycode 0x16 = BackSpace backslash
+
+clear Control
+add Control = Control_L
+add Control = Control_R
+
+! make Alt_R generate Super_R instead, which we use in our wmrc to map to
+! injections of tmux prefix-action sequences (to avoid multiple keypresses)
+!
+keycode 0x6c = Super_R
+clear mod4
+add mod4 = Super_R
+
+! still want to be able to access mod1 modifier map with an alt key
+! so we only use Alt_L for it, leave real Alt_R (0x6c) on mod4 (above)
+!
+clear mod1
+add mod1 = Alt_L
+
+!latin capital A with acute	Á	0x00c1	#193	Aacute
+!latin capital E with acute	É	0x00c9	#201	Eacute
+!latin capital I with acute	Í	0x00cd	#205	Iacute
+!latin capital N with tilde	Ñ	0x00d1	#209	Ntilde
+!latin capital O with acute	Ó	0x00d3	#211	Oacute
+!latin capital U with acute	Ú	0x00da	#218	Uacute
+!latin capital U with umlaut	Ü	0x00dc	#220	Udiaeresis
+!latin inverted question mark	¿	0x00bf	#191	questiondown
+!latin small A with acute	á	0x00e1	#225	aacute
+!latin small e with acute	é	0x00e9	#233	eacute
+!latin small I with acute	í	0x00ed	#237	Iacute
+!latin small N with tilde	ñ	0x00f1	#241	ntilde
+!latin small o with acute	ó	0x00f3	#243	oacute
+!latin small U with acute	ú	0x00fa	#250	uacute
+!latin small U with umlaut	ü	0x00fc	#252	udiaeresis
+!latin inverted excl point	¡	0x00a2	#161	exclamdown
+!
+! make Super_L generate Mode_switch instead, which we use for spanish
+!
+keycode 0x85 = Mode_switch
+clear mod5
+add mod5 = Mode_switch
+keysym a = a A aacute Aacute
+keysym e = e E eacute Eacute
+keysym i = i I iacute Iacute
+keysym n = n N ntilde Ntilde
+keysym o = o O oacute Oacute
+keysym u = u U uacute Uacute
+keysym q = q Q questiondown questiondown
+keysym x = x X exclamdown exclamdown
