@@ -1,0 +1,14 @@
+#
+# forcing these settings in the X server has better results
+# than allowing it to autodetect
+#
+
+# thinkpad x61s 11.3" 1024x768
+XRC_DPI=106
+XRC_HRES=1024
+XRC_VRES=768
+
+# macbook pro retina 13"
+#XRC_DPI=227
+#XRC_HRES=2560
+#XRC_YRES=1600
