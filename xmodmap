@@ -13,6 +13,12 @@
 !
 ! order: unmodified Shift Mode_switch Mode_switch+Shift
 
+! for some reason this doesnt work out of box on mbpr 12,1 but did work
+! correctly on 11,1... on former tilde/backtick generates < and > instead
+! but this will need to be hermes-specific branch
+!
+!keycode 0x3c = 
+
 ! make capslock key escape
 clear Lock
 keycode 0x42 = Escape Caps_Lock
