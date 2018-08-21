@@ -34,19 +34,6 @@ clear Control
 add Control = Control_L
 add Control = Control_R
 
-! make Alt_R generate Super_R instead, which we use in our wmrc to map to
-! injections of tmux prefix-action sequences (to avoid multiple keypresses)
-!
-keycode 0x6c = Super_R
-clear mod4
-add mod4 = Super_R
-
-! still want to be able to access mod1 modifier map with an alt key
-! so we only use Alt_L for it, leave real Alt_R (0x6c) on mod4 (above)
-!
-clear mod1
-add mod1 = Alt_L
-
 !latin capital A with acute	Á	0x00c1	#193	Aacute
 !latin capital E with acute	É	0x00c9	#201	Eacute
 !latin capital I with acute	Í	0x00cd	#205	Iacute
@@ -64,9 +51,16 @@ add mod1 = Alt_L
 !latin small U with umlaut	ü	0x00fc	#252	udiaeresis
 !latin inverted excl point	¡	0x00a2	#161	exclamdown
 !
-! make Super_L generate Mode_switch instead, which we use for spanish
+! mbpr with swap_opt_cmd=1 and iso_layout=0 kernel args
+! 0x85 133 option left
+! 0x86 134 option right
+! 0x40  64 command left
+! 0x6c 108 command right
 !
-keycode 0x85 = Mode_switch
+! we want Super_R to generate Mode_switch for spanish letters
+! note: this has to be present *before* we do anything with Super_R
+!
+keycode 0x86 = Mode_switch
 clear mod5
 add mod5 = Mode_switch
 keysym a = a A aacute Aacute
@@ -77,3 +71,16 @@ keysym o = o O oacute Oacute
 keysym u = u U uacute Uacute
 keysym q = q Q questiondown questiondown
 keysym x = x X exclamdown exclamdown
+
+! make Alt_R generate Super_R instead, which we use in our wmrc to map to
+! injections of tmux prefix-action sequences (to avoid multiple keypresses)
+!
+keycode 0x6c = Super_R
+clear mod4
+add mod4 = Super_R
+
+! still want to be able to access mod1 modifier map with an alt key
+! so we only use Alt_L for it, leave real Alt_R (0x6c) on mod4 (above)
+!
+clear mod1
+add mod1 = Alt_L
