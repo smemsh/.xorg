@@ -16,8 +16,8 @@ set historysize 999
 # use fc-list to see fonts (ie, uses fontconfig names)
 set font inconsolata-14
 
-set fgcolor LightCyan
-set bgcolor Blue
+set fgcolor LightGreen
+set bgcolor Black
 set barpadding 0 0
 set barborder 0
 set padding 0 0 0 0
