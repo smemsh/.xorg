@@ -104,7 +104,9 @@ definekey top M-k               gprev
 definekey top M-h               prev
 definekey top M-l               next
 
-definekey top M-b               exec chromium
+#definekey top M-b               exec chromium
+#definekey top M-b               exec ggw `ratpoison -c "prompt search: "`
+definekey top M-b               exec ratpoison -c "echo $(batt)"
 definekey top M-semicolon       exec chromium
 definekey top M-p               verbexec wmpersist save
 definekey top M-i               exec invert
