@@ -111,7 +111,7 @@ definekey top M-semicolon       exec chromium --profile-directory="Default"
 definekey top M-w               exec chromium --profile-directory="Profile 1"
 definekey top M-p               verbexec wmpersist save
 definekey top M-i               exec xinvert
-definekey top M-t               time
+definekey top M-t               exec ratpoison -c "echo $(date +%Y%m%d%H%M%S)"
 
 definekey top M-q               delete
 definekey top M-bracketleft     groups
