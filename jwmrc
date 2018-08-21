@@ -1,0 +1,169 @@
+<?xml version="1.0"?>
+
+<JWM>
+
+   <StartupCommand>xrdb -load /home/scott/.Xresources</StartupCommand>
+
+   <!-- The root menu, if this is undefined you will not get a menu. -->
+   <!-- Additional RootMenu attributes: onroot, labeled, label -->
+   <RootMenu height="52" onroot="123">
+      <Program label="urxvt">urxvt</Program>
+      <!-- <Menu icon="folder.png" label="apps"> -->
+      <Program label="gimp">gimp</Program>
+      <!-- </Menu> -->
+      <Separator/>
+      <Restart label="restart"/>
+      <Exit label="exit" confirm="true"/>
+      <Separator/>
+   </RootMenu>
+
+   <Group>
+      <Name>urxvt</Name>
+      <Option>vmax</Option>
+   </Group>
+
+   <!-- Additional tray attributes: autohide, width, border, layer, layout -->
+   <Tray  x="20" y="-1" height="52">
+
+      <!-- Additional TrayButton attribute: label -->
+      <TrayButton label="+">root:1</TrayButton>
+
+      <!-- <TrayButton label="_">showdesktop</TrayButton> -->
+
+      <!-- Additional Pager attributes; width, height -->
+      <!-- <Pager/> -->
+
+      <Separator/>
+
+      <!-- Additional TaskList attribute: maxwidth -->
+      <TaskList/>
+
+      <Dock/>
+
+      <!-- Additional Swallow attribute: height -->
+      <!--
+      <Swallow name="xload" width="64">
+         xload -nolabel -bg black -fg red -hl white
+      </Swallow>
+      -->
+
+      <Clock>xclock</Clock>
+
+   </Tray>
+
+   <!-- Visual Styles -->
+
+   <WindowStyle>
+
+      <Font>FreeSans-11:italic</Font>
+      <Width>8</Width>
+      <Height>40</Height>
+
+      <Active>
+         <Text>white</Text>
+         <Title>#70849d:#2e3a67</Title>
+         <Corner>white</Corner>
+         <Outline>black</Outline>
+      </Active>
+
+      <Inactive>
+         <Text>#aaaaaa</Text>
+         <Title>#808488:#303438</Title>
+         <Corner>#aaaaaa</Corner>
+         <Outline>black</Outline>
+      </Inactive>
+
+   </WindowStyle>
+
+   <TaskListStyle>
+      <Font>FreeSans-10:italic</Font>
+      <ActiveForeground>black</ActiveForeground>
+      <ActiveBackground>gray90:gray70</ActiveBackground>
+      <Foreground>lightgrey</Foreground>
+      <Background>black</Background>
+   </TaskListStyle>
+
+   <!-- Additional TrayStyle attribute: insert -->
+   <TrayStyle>
+      <Font>FreeSans-10:italic</Font>
+      <Background>black</Background>
+      <Foreground>lightgrey</Foreground>
+   </TrayStyle>
+
+   <PagerStyle>
+      <Outline>black</Outline>
+      <Foreground>gray90</Foreground>
+      <Background>#808488</Background>
+      <ActiveForeground>#70849d</ActiveForeground>
+      <ActiveBackground>#2e3a67</ActiveBackground>
+   </PagerStyle>
+
+   <MenuStyle>
+      <Font>FreeSans-12:italic</Font>
+      <Foreground>lightgrey</Foreground>
+      <Background>darkblue</Background>
+      <ActiveForeground>yellow</ActiveForeground>
+      <ActiveBackground>#70849d:#2e3a67</ActiveBackground>
+   </MenuStyle>
+
+   <PopupStyle>
+      <Font>FreeSans-11</Font>
+      <Outline>darkgrey</Outline>
+      <Foreground>darkblue</Foreground>
+      <Background>darkgrey</Background>
+   </PopupStyle>
+
+   <IconPath>
+      $HOME/.icons
+   </IconPath>
+
+   <!-- Virtual Desktops -->
+   <!-- Desktop tags can be contained within Desktops for desktop names. -->
+   <Desktops count="1">
+
+      <!-- Default background. Note that a Background tag can be
+           contained within a Desktop tag to give a specific background
+           for that desktop.
+       -->
+      <!-- <Background type="tile">$HOME/bg.xpm</Background> -->
+
+   </Desktops>
+
+   <!-- Double click speed (in milliseconds) -->
+   <DoubleClickSpeed>400</DoubleClickSpeed>
+
+   <!-- Double click delta (in pixels) -->
+   <DoubleClickDelta>2</DoubleClickDelta>
+
+   <!-- The focus model (sloppy or click) -->
+   <FocusModel>sloppy</FocusModel>
+
+   <!-- The snap mode (none, screen, or border) -->
+   <SnapMode distance="10">border</SnapMode>
+
+   <!-- The move mode (outline or opaque) -->
+   <MoveMode>opaque</MoveMode>
+
+   <!-- The resize mode (outline or opaque) -->
+   <ResizeMode>opaque</ResizeMode>
+
+   <!-- Key bindings -->
+   <Key key="Up">up</Key>
+   <Key key="Down">down</Key>
+   <Key key="Right">right</Key>
+   <Key key="Left">left</Key>
+   <Key key="h">left</Key>
+   <Key key="j">down</Key>
+   <Key key="k">up</Key>
+   <Key key="l">right</Key>
+   <Key key="Return">select</Key>
+   <Key key="Escape">escape</Key>
+
+   <Key mask="A" key="Tab">nextstacked</Key>
+   <Key mask="A" key="F4">close</Key>
+   <Key mask="A" key="#">desktop#</Key>
+   <Key mask="A" key="F1">root:1</Key>
+   <Key mask="A" key="F2">window</Key>
+
+</JWM>
+
