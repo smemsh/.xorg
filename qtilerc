@@ -9,7 +9,8 @@ try:
 except ImportError:
     pass
 
-mod = "mod4"
+#mod = "mod4"
+mod = "mod3"
 
 keys = [
     # Switch between windows in current stack pane
