@@ -76,19 +76,22 @@ add Control = Control_R
 ! injections of tmux prefix-action sequences (to avoid multiple keypresses)
 !
 keycode 0x6c = Super_R
+keycode 0x86 = Super_R
 clear mod4
 add mod4 = Super_R
 
 ! nothing else is bound to mod3, reserve Super_L for it so Super_R can be
 ! assigned to something else, at time of writing using this for prefix when
 ! testing out new window manager under Xephyr
+! testing with external keyboard with keys swapped
 !
-keycode 0x85 = Super_L
-clear mod3
-add mod3 = Super_L
+!keycode 0x40 = Super_L
+!clear mod3
+!add mod3 = Super_L
 
 ! still want to be able to access mod1 modifier map with an alt key
 ! so we only use Alt_L for it, leave real Alt_R (0x6c) on mod4 (above)
 !
+keycode 0x85 = Alt_L
 clear mod1
 add mod1 = Alt_L
