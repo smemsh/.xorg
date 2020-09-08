@@ -182,4 +182,5 @@ verbexec pgrep urxvtd 2>&1 >/dev/null || urxvtd -q -f -o
 verbexec xmodmap ~/.Xmodmap 2>&1
 #verbexec setxkbmap -layout us,es
 verbexec rptmux
+
 echo rpinit finished
