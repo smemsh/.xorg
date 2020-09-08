@@ -112,7 +112,7 @@ definekey top M-W               exec ratpoison -c 'gmove w'; ratpoison -c other;
 definekey top M-b               exec ratpoison -c "echo $(batt)"
 definekey top M-semicolon       exec chromium --profile-directory="Default"
 definekey top M-w               exec chromium --profile-directory="Profile 1"
-definekey top M-p               verbexec wmpersist save
+definekey top M-p               verbexec ppause chromium
 definekey top M-i               exec xinvert
 definekey top M-t               exec ratpoison -c "echo $(date +%Y%m%d%H%M%S)"
 
