@@ -179,6 +179,15 @@ verbexec xset m 2 16
 verbexec xset r rate 265 85
 verbexec xrdb -load ~/.Xresources
 verbexec pgrep urxvtd 2>&1 >/dev/null || urxvtd -q -f -o
+
+# "xinput --list" -> "xinput --list-props 11"
+# "ls /dev/input/by-path/*event-mouse" -> "sudo evtest /dev/input/event1"
+# left, right, top, bottom; X varies from X1 to X2; Y varies from Y1 to Y2
+verbexec xinput -set-prop --type=int 'Apple SPI Touchpad' 'Synaptics Area' -2500 3300 1800 5500
+
+# min, max, accel, dontuse
+verbexec xinput -set-prop --type=float 'Apple SPI Touchpad' 'Synaptics Move Speed' 2.0 6.5 1.3 0
+
 #verbexec setxkbmap -model pc104 -layout us -variant intl
 verbexec xmodmap ~/.Xmodmap 2>&1
 #verbexec setxkbmap -layout us,es
