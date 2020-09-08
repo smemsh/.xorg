@@ -60,17 +60,17 @@ add Control = Control_R
 ! we want Super_R to generate Mode_switch for spanish letters
 ! note: this has to be present *before* we do anything with Super_R
 !
-keycode 0x86 = Mode_switch
-clear mod5
-add mod5 = Mode_switch
-keysym a = a A aacute Aacute
-keysym e = e E eacute Eacute
-keysym i = i I iacute Iacute
-keysym n = n N ntilde Ntilde
-keysym o = o O oacute Oacute
-keysym u = u U uacute Uacute
-keysym q = q Q questiondown questiondown
-keysym x = x X exclamdown exclamdown
+!keycode 0x86 = Mode_switch
+!clear mod5
+!add mod5 = Mode_switch
+!keysym a = a A aacute Aacute
+!keysym e = e E eacute Eacute
+!keysym i = i I iacute Iacute
+!keysym n = n N ntilde Ntilde
+!keysym o = o O oacute Oacute
+!keysym u = u U uacute Uacute
+!keysym q = q Q questiondown questiondown
+!keysym x = x X exclamdown exclamdown
 
 ! make Alt_R generate Super_R instead, which we use in our wmrc to map to
 ! injections of tmux prefix-action sequences (to avoid multiple keypresses)
