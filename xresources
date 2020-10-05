@@ -282,7 +282,8 @@ URxvt.font-size.step:	1
 ! real/true for 1280x1024@17inch = 96
 !
 !Xft.dpi:		96
-Xft.dpi:		106
+!Xft.dpi:		106
+Xft.dpi:		339
 
 ! these settings are somewhat magical so beware of alteration, in particular
 ! - there seems to be conflicting opinion about whether infinality is needed
