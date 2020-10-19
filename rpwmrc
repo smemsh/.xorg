@@ -106,6 +106,7 @@ definekey top M-l               next
 
 definekey top M-P               exec ratpoison -c 'gmove p'; ratpoison -c other; ratpoison -c next
 definekey top M-W               exec ratpoison -c 'gmove w'; ratpoison -c other; ratpoison -c next
+definekey top M-Q               exec ratpoison -c 'gmove q'; ratpoison -c other; ratpoison -c next
 
 #definekey top M-b               exec chromium
 #definekey top M-b               exec ggw `ratpoison -c "prompt search: "`
