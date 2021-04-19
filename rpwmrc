@@ -101,8 +101,8 @@ definekey top M-Q               exec ratpoison -c 'gmove q'; ratpoison -c other;
 definekey top M-b               exec ratpoison -c "echo $(batt)"
 definekey top M-semicolon       exec rpafter gui-browser --profile-directory="Default"
 definekey top M-w               exec rpafter gui-browser --profile-directory="Profile 1"
-definekey top M-p               verbexec ppause chromium
-definekey top M-u               verbexec presume chromium
+definekey top M-p               verbexec ppause chrome
+definekey top M-u               verbexec presume chrome
 definekey top M-i               exec xinvert
 definekey top M-t               exec ratpoison -c "echo $(date +%Y%m%d%H%M%S)"
 
