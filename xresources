@@ -312,3 +312,6 @@ Xft.minspace:			true
 
 /* XXX TODO this doesnt work yet, see project in ~/.fonts/ */
 //URxvt*font:			xft:sun12x22:size=13:medium:roman:
+
+Xcursor.theme:			Adwaita
+Xcursor.size:			64
