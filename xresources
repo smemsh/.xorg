@@ -319,3 +319,6 @@ Xft.minspace:		true
 !
 !URxvt*font:		xft:sun12x22:size=13:medium:roman:
 !
+
+Xcursor.theme:		Adwaita
+Xcursor.size:		64
