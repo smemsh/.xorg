@@ -179,6 +179,23 @@ verbexec xset m 2 16
 verbexec xset r rate 265 85
 verbexec xrdb -load ~/.Xresources
 verbexec pgrep urxvtd 2>&1 >/dev/null || urxvtd -q -f -o
+
+# "xinput --list" -> "xinput --list-props 11"
+# "ls /dev/input/by-path/*event-mouse" -> "sudo evtest /dev/input/event1"
+# left, right, top, bottom; X varies from X1 to X2; Y varies from Y1 to Y2
+#
+verbexec xinput -set-prop --type=int 'DLL096D:01 06CB:CDE6 Touchpad' 'libinput Tapping Enabled' 1 || true
+verbexec xinput -set-prop --type=int 'DLL096D:01 06CB:CDE6 Touchpad' 'libinput Tapping Drag Enabled' 1 || true
+verbexec xinput -set-prop --type=int 'DLL096D:01 06CB:CDE6 Touchpad' 'libinput Natural Scrolling Enabled' 1 || true
+verbexec xinput -set-prop --type=int 'DLL096D:01 06CB:CDE6 Touchpad' 'libinput Disable While Typing Enabled' 1 || true
+verbexec xinput -set-prop --type=int 'DLL096D:01 06CB:CDE6 Touchpad' 'libinput Middle Emulation Enabled' 1 || true
+verbexec xinput -set-prop --type=int 'DLL096D:01 06CB:CDE6 Touchpad' 'libinput Horizontal Scroll Enabled' 1 || true
+verbexec xinput -set-prop --type=float 'DLL096D:01 06CB:CDE6 Touchpad' 'libinput Accel Speed' 1.0 || true
+
+verbexec xinput -set-prop --type=int 'DLL096D:01 06CB:CDE6 Mouse' 'libinput Natural Scrolling Enabled' 1 || true
+verbexec xinput -set-prop --type=int 'DLL096D:01 06CB:CDE6 Mouse' 'libinput Horizontal Scroll Enabled' 1 || true
+verbexec xinput -set-prop --type=float 'DLL096D:01 06CB:CDE6 Mouse' 'libinput Accel Speed' 1.0 || true
+
 #verbexec setxkbmap -model pc104 -layout us -variant intl
 verbexec xmodmap ~/.Xmodmap 2>&1
 #verbexec setxkbmap -layout us,es
