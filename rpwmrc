@@ -5,10 +5,10 @@
 #
 ##############################################################################
 
-startup_message off
-chdir
+set startupmessage 0
+set msgwait 0
 
-msgwait 0
+chdir
 
 # XXX make this infinite, use readline, load it on start
 set historysize 999
