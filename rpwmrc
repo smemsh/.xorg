@@ -111,8 +111,8 @@ definekey top M-Q               exec ratpoison -c 'gmove q'; ratpoison -c other;
 #definekey top M-b               exec chromium
 #definekey top M-b               exec ggw `ratpoison -c "prompt search: "`
 definekey top M-b               exec ratpoison -c "echo $(batt)"
-definekey top M-semicolon       exec brave-browser --profile-directory="Default"
-definekey top M-w               exec brave-browser --profile-directory="Profile 1"
+definekey top M-semicolon       exec brave-browser --enable-features=VaapiVideoDecoder --profile-directory="Default"
+definekey top M-w               exec brave-browser --enable-features=VaapiVideoDecoder --profile-directory="Profile 1"
 #definekey top M-semicolon       exec google-chrome --disable-gpu --profile-directory="Default"
 #definekey top M-w               exec google-chrome --disable-gpu --profile-directory="Profile 1"
 #definekey top M-semicolon       exec google-chrome --profile-directory="Default"
