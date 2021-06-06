@@ -174,11 +174,15 @@ alias gsel gselect
 # note: should be idempotent, to survive "ratpoison -c restart", etc
 # note: passed unaltered to 'sh -c' so be sure no bashisms
 #
-verbexec xsetroot -solid black
 verbexec xset m 2 16
 verbexec xset r rate 265 85
 verbexec xrdb -load ~/.Xresources
 verbexec pgrep urxvtd 2>&1 >/dev/null || urxvtd -q -f -o
+
+# use a compositor (and composed background) because apps draw better
+#verbexec xsetroot -solid black
+verbexec hsetroot -solid '#000000'
+verbexec compton -b --backend glx --vsync opengl
 
 # "xinput --list" -> "xinput --list-props 11"
 # "ls /dev/input/by-path/*event-mouse" -> "sudo evtest /dev/input/event1"
