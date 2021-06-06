@@ -174,8 +174,6 @@ alias gsel gselect
 # note: should be idempotent, to survive "ratpoison -c restart", etc
 # note: passed unaltered to 'sh -c' so be sure no bashisms
 #
-verbexec xset m 2 16
-verbexec xset r rate 265 85
 verbexec xrdb -load ~/.Xresources
 verbexec pgrep urxvtd 2>&1 >/dev/null || urxvtd -q -f -o
 
@@ -184,9 +182,9 @@ verbexec pgrep urxvtd 2>&1 >/dev/null || urxvtd -q -f -o
 verbexec hsetroot -solid '#000000'
 verbexec compton -b --backend glx --vsync opengl
 
-#verbexec setxkbmap -model pc104 -layout us -variant intl
-verbexec xmodmap ~/.Xmodmap 2>&1
-#verbexec setxkbmap -layout us,es
+# keyboard, touchpad, mouse, etc
+verbexec xinputs
 verbexec rptmux
 
+#
 echo rpinit finished
