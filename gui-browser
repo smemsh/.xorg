@@ -3,4 +3,5 @@
 google-chrome \
 	--no-default-browser-check \
 	--disable-pings \
+	--disable-gpu \
 	"$@"
