@@ -1,4 +1,5 @@
 #!/bin/sh
 
 brave-browser \
+	--enable-features=VaapiVideoDecoder \
 	"$@"
