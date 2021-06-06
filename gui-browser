@@ -3,4 +3,5 @@
 brave-browser \
 	--no-default-browser-check \
 	--disable-pings \
+	--enable-features=VaapiVideoDecoder \
 	"$@"
