@@ -1,7 +1,6 @@
 #!/bin/sh
 
-google-chrome \
+brave-browser \
 	--no-default-browser-check \
 	--disable-pings \
-	--disable-gpu \
 	"$@"
