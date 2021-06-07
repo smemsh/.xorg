@@ -1,5 +1,37 @@
 //
-
+// xkb-based keyboard configuration
+//   loads from ~/bin/xinputs after letting X/udev set ordinary defaults
+//
+// see files in /usr/share/X11/xkb which correspond to the below:
+//   subdir_therein { include "filename(section)" }
+//
+// useful urls to make sense of this (yes, it's really this complicated):
+//   http://linux.lsdev.sil.org/wiki/index.php/Building_an_XKB_Keyboard
+//   https://marc.merlins.org/perso/linux/post_2017-09-03_Xorg-Switching-From-Xmodmap-To-Xkbcomp-and-Setxkbmap.html
+//   https://www.charvolant.org/doug/xkb/html/
+//   https://www.x.org/releases/current/doc/xorg-docs/input/XKB-Config.html
+//   https://www.x.org/wiki/XKB/
+//   https://www.x.org/releases/X11R7.5/doc/input/XKB-Enhancing.html
+//   https://web.archive.org/web/20020102123728/http://www.tsu.ru/~pascal/en/xkb/
+//   https://unix.stackexchange.com/questions/524711/change-keyboard-layout-without-restarting
+//   https://unix.stackexchange.com/questions/55076/what-is-the-mode-switch-modifier-for
+//   https://unix.stackexchange.com/questions/196634/how-to-set-up-xkb-to-work-with-3-modifier-keys-and-2-switchable-layouts
+//   https://unix.stackexchange.com/questions/419042/xkb-modify-layout-to-multi-group-with-mode-switch
+//   https://unix.stackexchange.com/questions/90089/remapping-both-caps-lock-and-shiftcaps-lock-in-xkb
+//   https://unix.stackexchange.com/questions/328400/how-to-remap-super-keys
+//   https://unix.stackexchange.com/questions/572768/remapping-a-key-for-xkb
+//   https://unix.stackexchange.com/questions/188164/override-a-few-keycodes-with-xkb
+//   https://superuser.com/questions/704928/xkb-set-keyboard-level-3-chooser-to-ctrlalt
+//   http://who-t.blogspot.com/2008/09/rmlvo-keyboard-configuration.html
+//   https://www.freedesktop.org/wiki/Software/XKeyboardConfig/
+//   https://wiki.archlinux.org/title/X_keyboard_extension
+//   https://wiki.archlinux.org/title/Xorg/Keyboard_configuration
+//   https://medium.com/@damko/a-simple-humble-but-comprehensive-guide-to-xkb-for-linux-6f1ad5e13450
+//   http://linux.lsdev.sil.org/wiki/index.php/Building_an_XKB_Keyboard
+//   https://help.ubuntu.com/community/Custom%20keyboard%20layout%20definitions
+//   https://bugs.chromium.org/p/chromium/issues/detail?id=394552/
+//   https://src.chromium.org/viewvc/chrome/trunk/src/ui/events/keycodes/keyboard_code_conversion_x.cc
+//
 xkb_keymap {
 
 	xkb_types           { include "complete" };
