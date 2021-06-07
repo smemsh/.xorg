@@ -11,4 +11,5 @@ xset r rate 265 85
 setint () { xinput --set-prop --type=int "$1" "$2" "$3" || true; }
 setfloat () { xinput --set-prop --type=float "$1" "$2" "$3" || true; }
 
-xkbcomp -I$(basename $(readlink -f $BASH_SOURCE))/xkb ~/.Xkeymap :0 2>/dev/null
+xkeymap=~/.Xkeymap
+xkbcomp -I$(dirname $(readlink -f $xkeymap))/xkb $xkeymap :0 2>/dev/null
