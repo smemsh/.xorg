@@ -1,0 +1,23 @@
+//
+
+xkb_keymap {
+
+	xkb_types           { include "complete" };
+	xkb_geometry        { include "pc(pc105)" };
+	xkb_compatibility   { include "complete" };
+
+	xkb_keycodes {
+		include "evdev"
+		include "aliases(qwerty)"
+	};
+	xkb_symbols {
+		name[group2]="smemsh-normal-backslash";
+		include "pc"
+		include "us"
+		include "inet(evdev)"
+		include "capslock(escape_shifted_capslock)"
+		include "smemsh(lrctls)"
+		include "smemsh(raltsuper)"
+		include "smemsh(shiftescmode)"
+	};
+};

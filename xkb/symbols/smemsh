@@ -1,0 +1,38 @@
+//
+
+// shift-escape will toggle between group1 and group2
+// which allows use of backslash and pipe while inputting text
+// in ahy chrome textarea or dialogs
+// see https://bugs.chromium.org/p/chromium/issues/detail?id=394552
+//
+partial alphanumeric_keys
+xkb_symbols "shiftescmode" {
+	replace key <ESC> {
+		repeat=no,
+		// does not work to specify group1 for some reason
+		type[group2]="TWO_LEVEL",
+		symbols[group1]=[ Escape, ISO_Last_Group ],
+		symbols[group2]=[ Escape, ISO_First_Group ]
+	};
+};
+
+partial alphanumeric_keys
+xkb_symbols "lrctls" {
+	replace key <TAB> { [ Control_L, Tab ] };
+	replace key <BKSL> {
+		[ Control_R, bar ], // group1
+		[ backslash, bar ]  // group2
+	};
+	replace key <BKSP> { [ BackSpace, backslash ] };
+};
+
+partial modifier_keys
+xkb_symbols "raltsuper" {
+	replace key <RALT> {
+		repeat=no,
+		type="ONE_LEVEL",
+		[ Super_R ]
+	};
+	modifier_map Mod4 { <SUPR> };
+	modifier_map Mod4 { <RALT> };
+};
