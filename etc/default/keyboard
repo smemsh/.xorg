@@ -1,4 +1,8 @@
 # KEYBOARD CONFIGURATION FILE
+#
+# see .xorg/xkeymap and .xorg/xinputs for how we do xkb config
+# --smemsh-20210606184504
+#
 
 # Consult the keyboard(5) manual page.
 
