@@ -29,4 +29,5 @@ setint "$mouse" 'libinput Natural Scrolling Enabled' 1
 setint "$mouse" 'libinput Horizontal Scroll Enabled' 1
 setfloat "$mouse" 'libinput Accel Speed' 1.0
 
-xkbcomp -I$(basename $(readlink -f $BASH_SOURCE))/xkb ~/.Xkeymap :0 2>/dev/null
+xkeymap=~/.Xkeymap
+xkbcomp -I$(dirname $(readlink -f $xkeymap))/xkb $xkeymap :0 2>/dev/null
