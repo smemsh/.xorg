@@ -1,4 +1,6 @@
 !
+! NOTE: this file no longer used, we use xkb now, see 'xkeymap'
+!
 ! filename: was .xmodmaprc, now .Xmodmap, changed somewhere:
 !
 !  $ grep -sir \\\.xmodmap /etc
