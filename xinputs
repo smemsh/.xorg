@@ -14,20 +14,19 @@ ps2base='DLL096D:01 06CB:CDE6'
 mouse="$ps2base Mouse"
 touchpad="$ps2base Touchpad"
 
-setint () { xinput --set-prop --type=int "$1" "$2" "$3" || true; }
-setfloat () { xinput --set-prop --type=float "$1" "$2" "$3" || true; }
+setprop () { xinput --set-prop "$1" "$2" "$3" || true; }
 
-setint "$touchpad" 'libinput Tapping Enabled' 1
-setint "$touchpad" 'libinput Tapping Drag Enabled' 1
-setint "$touchpad" 'libinput Natural Scrolling Enabled' 1
-setint "$touchpad" 'libinput Disable While Typing Enabled' 1
-setint "$touchpad" 'libinput Middle Emulation Enabled' 1
-setint "$touchpad" 'libinput Horizontal Scroll Enabled' 1
-setfloat "$touchpad" 'libinput Accel Speed' 1.0
+setprop "$touchpad" 'libinput Tapping Enabled' 1
+setprop "$touchpad" 'libinput Tapping Drag Enabled' 1
+setprop "$touchpad" 'libinput Natural Scrolling Enabled' 1
+setprop "$touchpad" 'libinput Disable While Typing Enabled' 1
+setprop "$touchpad" 'libinput Middle Emulation Enabled' 1
+setprop "$touchpad" 'libinput Horizontal Scroll Enabled' 1
+setprop "$touchpad" 'libinput Accel Speed' 1.0
 
-setint "$mouse" 'libinput Natural Scrolling Enabled' 1
-setint "$mouse" 'libinput Horizontal Scroll Enabled' 1
-setfloat "$mouse" 'libinput Accel Speed' 1.0
+setprop "$mouse" 'libinput Natural Scrolling Enabled' 1
+setprop "$mouse" 'libinput Horizontal Scroll Enabled' 1
+setprop "$mouse" 'libinput Accel Speed' 1.0
 
 xkeymap=~/.Xkeymap
 xkbcomp -I$(dirname $(readlink -f $xkeymap))/xkb $xkeymap :0 2>/dev/null
