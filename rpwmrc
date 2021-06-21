@@ -117,8 +117,8 @@ definekey top M-w               exec brave-browser --enable-features=VaapiVideoD
 #definekey top M-w               exec google-chrome --disable-gpu --profile-directory="Profile 1"
 #definekey top M-semicolon       exec google-chrome --profile-directory="Default"
 #definekey top M-w               exec google-chrome --profile-directory="Profile 1"
-definekey top M-p               verbexec ppause chrome
-definekey top M-u               verbexec presume chrome
+definekey top M-p               verbexec ppause brave-browser
+definekey top M-u               verbexec presume brave-browser
 definekey top M-i               exec xinvert
 definekey top M-t               exec ratpoison -c "echo $(date +%Y%m%d%H%M%S)"
 
