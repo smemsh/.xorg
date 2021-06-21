@@ -1,0 +1,95 @@
+#
+# - some gtk2 apps get these keys directly from this file
+#   - google-chrome for example uses [todo: finish that thought]
+# - some get them from gconf
+# - some get them from both, with undefined order
+# - ergo: make all the mentioned gconf keys exist in both places
+# - ref: https://developer.gnome.org/gtk2/stable/GtkSettings.html
+#
+# gtk2 -> gconf -> gconftool-2, gconf-editor
+# gtk3 -> gsettings ->
+#
+# themes:
+# - support gtk2: /usr/share/themes/*/gtk-2.0
+# - support gtk3: /usr/share/themes/*/gtk-3.0
+# - support both:
+#
+#     $ for gtk2dir in /usr/share/themes/*/gtk-2.0; do
+#           base="$(dirname "$gtk2dir")"
+#           test -d "$base/gtk-3.0" && echo "${gtk2dir%/*}"
+#       done
+#    /usr/share/themes/Adwaita
+#    /usr/share/themes/HighContrast
+#    /usr/share/themes/HighContrastInverse
+#    /usr/share/themes/LowContrast
+#    /usr/share/themes/Raleigh
+#
+#     $ lsb_release -d
+#    Description:    Fedora release 16 (Verne)
+#
+##############################################################################
+
+# file:/usr/share/themes/foo
+# gconf:/desktop/gnome/interface/gtk_theme
+# note: Raleigh works for both gtk2 and gtk3
+#
+gtk-theme-name			= "Adwaita"
+
+# file:///usr/share/icons/foo
+# gconf:/desktop/gnome/interface/icon_theme
+#
+gtk-icon-theme-name		= "Adwaita"
+
+# file:/usr/share/icons/foo/cursor
+# gconf:/desktop/gnome/peripherals/mouse/cursor_theme
+#
+gtk-cursor-theme-name		= "Adwaita"
+gtk-cursor-theme-size		= 64
+
+gtk-menu-bar-popup-delay	= 2048
+gtk-menu-bar-popdown-delay	= 2048
+gtk-toolbar-style		= GTK_TOOLBAR_BOTH
+gtk-toolbar-icon-size		= GTK_ICON_SIZE_LARGE_TOOLBAR
+gtk-button-images		= 0
+gtk-menu-images			= 0
+gtk-enable-event-sounds		= 1
+gtk-enable-input-feedback-sounds = 1
+
+# also see .Xresources, not sure which takes precedence,
+# probably this one for gtk apps but not for others
+#
+#gtk-xft-antialias		= 1
+#gtk-xft-hinting			= 1
+#gtk-xft-hintstyle		= "hintfull"
+#gtk-xft-rgba			= "rgb"
+
+# file:/usr/share/fonts
+# gconf:/desktop/gnome/interface/font_name
+# todo: not sure if both of these are real
+#
+gtk-font-name			= "Quattrocento Sans 13"
+font-name			= "Quattrocento Sans 13"
+
+# todo: what is this used for? which for titlebar, which for menus, which for
+# app text default?
+document-font-name		= "Quattrocento Sans 13"
+
+#
+monospace-font			= "Anonymous Pro 13"
+#monospace-font			= "Source Code Pro 14"
+
+### WIDGET STYLE #############################################################
+
+# todo: some document that says the format here, on freedesktop.org
+# todo: has it changed gtk2-gtk3?
+# todo: how do we put this in gtk-3.0/settings.ini?
+
+# believe this overrides gconf... it's real css
+# todo: is this here for what? does it really override gconf?
+#
+style "user-font"
+{
+	font_name = "Quattrocento Sans 13"
+	#document_font_name = "Quattrocento Sans 14"
+}
+widget_class "*" style "user-font"
