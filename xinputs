@@ -28,6 +28,7 @@ setprop "$touchpad" 'libinput Accel Speed' 1.0
 setprop "$mouse" 'libinput Natural Scrolling Enabled' 1
 setprop "$mouse" 'libinput Horizontal Scroll Enabled' 1
 setprop "$mouse" 'libinput Accel Speed' 1.0
+setprop "$mouse" 'libinput Scroll Method Enabled' 0, 0, 1
 
 xkeymap=~/.Xkeymap
 xkbcomp -I$(dirname $(readlink -f $xkeymap))/xkb $xkeymap :0 2>/dev/null
