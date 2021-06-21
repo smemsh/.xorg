@@ -11,8 +11,9 @@ xset r rate 265 85
 
 ps2base='DLL096D:01 06CB:CDE6'
 
-mouse="$ps2base Mouse"
 touchpad="$ps2base Touchpad"
+#mouse="$ps2base Mouse"
+mouse="PixArt HP USB Optical Mouse"
 
 setprop () { xinput --set-prop "$1" "$2" "$3" || true; }
 
