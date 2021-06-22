@@ -15,7 +15,7 @@ touchpad="$ps2base Touchpad"
 #mouse="$ps2base Mouse"
 mouse="PixArt HP USB Optical Mouse"
 
-setprop () { xinput --set-prop "$1" "$2" "$3" || true; }
+setprop () { xinput --set-prop "$@" || true; }
 
 setprop "$touchpad" 'libinput Tapping Enabled' 1
 setprop "$touchpad" 'libinput Tapping Drag Enabled' 1
