@@ -8,7 +8,7 @@ xset r rate 265 85
 # "ls /dev/input/by-path/*event-mouse" -> "sudo evtest /dev/input/event1"
 # left, right, top, bottom; X varies from X1 to X2; Y varies from Y1 to Y2
 #
-setprop () { xinput --set-prop "$1" "$2" "$3" || true; }
+setprop () { xinput --set-prop "$@" || true; }
 
 xkeymap=~/.Xkeymap
 xkbcomp -I$(dirname $(readlink -f $xkeymap))/xkb $xkeymap :0 2>/dev/null
