@@ -206,16 +206,6 @@ URxvt.colorIT:		orangeRed
 URxvt*colorUL:		cyan
 ! URxvt*colorRV:        color
 
-!!! URXVT KEYBOARD HACK !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-!
-! todo: we need to do this with xkb (cannot figure out how with xmodmap)
-!       (see /usr/share/X11/xkb/rules/base.lst::option)
-!
-URxvt.keysym.Tab:	builtin
-URxvt.keysym.S-Tab:	\011
-URxvt.keysym.Delete:	\177
-URxvt.keysym.S-BackSpace: \\\
-
 !!! FONTS !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
 ! Re: Bold: with the small fonts we use on 12.1 inch screen, use of real bold
