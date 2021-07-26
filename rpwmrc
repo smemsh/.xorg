@@ -57,6 +57,9 @@ set waitcursor 1
 set winfmt %2s %5l %n %T %30t
 set winname name
 
+#
+setenv FONTCONFIG_PATH /etc/fonts
+
 # from the docs:
 #
 #deletewindow	Run after a window is withdrawn.
