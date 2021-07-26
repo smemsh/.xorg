@@ -1,0 +1,15 @@
+#
+
+# despite xdg spec saying we can surround '=' with spaces ("space before and
+# after the equals sign should be ignored") this doesn't work because xdg-open
+# in binary_to_desktop_file() does `grep -E "^Exec(\[[^]=]*])?=" "$file"
+# https://specifications.freedesktop.org/desktop-entry-spec/desktop-entry-spec-latest.html
+
+Name=elinks
+Exec=elinks %U
+Type=Application
+Icon=/usr/share/icons/Adwaita/scalable/apps/web-browser-symbolic.svg
+Version=1.5
+MimeType=text/html;x-scheme-handler/ftp;x-scheme-handler/http;x-scheme-handler/https
+Terminal=true
+GenericName=Terminal-based Web Browser
