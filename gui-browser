@@ -3,5 +3,6 @@
 brave-browser \
 	--enable-gpu-rasterization \
 	--no-default-browser-check \
+	--disable-pings \
 	--enable-features=VaapiVideoDecoder \
 	"$@"
