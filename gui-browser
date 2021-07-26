@@ -1,4 +1,5 @@
 #!/bin/sh
 
 chromium \
+	--no-default-browser-check \
 	"$@"
