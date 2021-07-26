@@ -1,5 +1,6 @@
 #!/bin/sh
 
 brave-browser \
+	--ignore-gpu-blacklist \
 	--enable-features=VaapiVideoDecoder \
 	"$@"
