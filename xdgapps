@@ -1,0 +1,6 @@
+#
+
+[Default Applications]
+text/html=elinks.desktop
+x-scheme-handler/http=elinks.desktop
+x-scheme-handler/https=elinks.desktop
