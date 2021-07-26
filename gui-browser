@@ -3,6 +3,7 @@
 brave-browser \
 	--no-default-browser-check \
 	--disable-pings \
+	--renderer-process-limit=999 \
 	--ignore-gpu-blacklist \
 	--enable-features=VaapiVideoDecoder \
 	"$@"
