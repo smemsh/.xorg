@@ -5,6 +5,7 @@
 # in binary_to_desktop_file() does `grep -E "^Exec(\[[^]=]*])?=" "$file"
 # https://specifications.freedesktop.org/desktop-entry-spec/desktop-entry-spec-latest.html
 
+[Desktop Entry]
 Name=elinks
 Exec=elinks %U
 Type=Application
