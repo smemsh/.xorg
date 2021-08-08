@@ -57,7 +57,7 @@ set waitcursor 1
 set winfmt %2s %5l %n %T %30t
 set winname name
 
-# from the docs:
+# hooks
 #
 #deletewindow	Run after a window is withdrawn.
 #newwindow	Run after a new window is mapped.
@@ -70,7 +70,7 @@ set winname name
 #switchwin	Run after a new window is selected.  (With
 #		dedication, it may already be inactive
 #		again, if it  was put  into  another frame)
-
+#
 # the below is needed when switching manually to different group
 # to maintain the window list if present pre-switch (and not
 # display it if not)
