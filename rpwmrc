@@ -71,17 +71,9 @@ set winname name
 #		dedication, it may already be inactive
 #		again, if it  was put  into  another frame)
 
-# this assists with rpsave script by not actually switching
-# the windows (what `other' will do after such an event) or
-# displaying the window list
-#
-# TODO above comment appears out of date, the below is needed
-# (as addhook) when switching manually to different group to
-# maintain the window list if present pre-switch (and not
-# display it if not).  comment may mean that the rpdump/rpsave
-# should do the remhook, dump, then addhook back.  but
-# addhook is not present elsewhere in this file prior to
-# adding it here:
+# the below is needed when switching manually to different group
+# to maintain the window list if present pre-switch (and not
+# display it if not)
 #
 addhook switchgroup exec ratpoison -c other
 addhook switchgroup exec ratpoison -c groups
