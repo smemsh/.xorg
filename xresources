@@ -152,6 +152,13 @@ URxvt.secondaryScroll:	true
 !   xrm:                string
 !   keysym.sym:         keysym
 
+! this suddenly started needing a specification that tab maps to tab, no idea
+! why.  tab key works fine in xterm so it's not the keyboard.  without this,
+! tab is sending escape-leftbracket-Z sequence.  this happens also when using
+! 'builtin:' as the map.  did not change urxvt version either... no idea
+!
+URxvt.keysym.Tab: string:\011
+
 !!! URXVT COLORS !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
 ! see /usr/share/X11/rgb.txt (see showrgb(1))
