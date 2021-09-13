@@ -127,6 +127,11 @@ alias gsel gselect
 verbexec xrdb -load ~/.Xresources
 verbexec pgrep urxvtd 2>&1 >/dev/null || urxvtd -q -f -o
 
+# start at least one window during init, or rpafter will fail because no
+# current window exists.  we always start a terminal first thing anyways
+#
+verbexec urxvtc
+
 # use a compositor (and composed background) because apps draw better
 #verbexec xsetroot -solid black
 verbexec hsetroot -solid '#000000'
