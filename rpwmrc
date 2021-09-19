@@ -125,7 +125,6 @@ alias gsel gselect
 # note: passed unaltered to 'sh -c' so be sure no bashisms
 
 verbexec xrdb -load ~/.Xresources
-verbexec pgrep urxvtd 2>&1 >/dev/null || urxvtd -q -f -o
 
 # start at least one window during init, or rpafter will fail because no
 # current window exists.  we always start a terminal first thing anyways
