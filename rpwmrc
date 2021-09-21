@@ -127,9 +127,14 @@ alias gsel gselect
 verbexec xrdb -load ~/.Xresources
 
 # start at least one window during init, or rpafter will fail because no
-# current window exists.  we always start a terminal first thing anyways
+# current window exists.  we always start a terminal first thing anyways.
+# sleep to avoid race with xrdb loading the urxvt resources (exec is async)
 #
-verbexec urxvtc
+# TODO this same issue could be a problem for everything else subsequent, need
+# to hack ratpoison to provide a synchronous exec or some kind of completion
+# barrier command
+#
+verbexec sleep 1; urxvtc
 
 # use a compositor (and composed background) because apps draw better
 #verbexec xsetroot -solid black
