@@ -6,7 +6,6 @@ xset r rate 265 85
 #
 # "xinput --list" -> "xinput --list-props 11"
 # "ls /dev/input/by-path/*event-mouse" -> "sudo evtest /dev/input/event1"
-# left, right, top, bottom; X varies from X1 to X2; Y varies from Y1 to Y2
 #
 setprop () { xinput --set-prop "$@" || true; }
 
