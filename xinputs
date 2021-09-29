@@ -1,13 +1,62 @@
 #!/usr/bin/env bash
-
-xset m 2 16
-xset r rate 265 85
-
 #
-# "xinput --list" -> "xinput --list-props 11"
-# "ls /dev/input/by-path/*event-mouse" -> "sudo evtest /dev/input/event1"
+# xinputs
+#   sources ~/.xinputrc
+#   runs embedded commands
+#   runs embedded inputrc() calls
 #
-setprop () { xinput --set-prop "$@" || true; }
+# howto:
+#   xinput --list
+#   xinput --list-props 11
+#   ls /dev/input/by-path/*event-mouse
+#   sudo evtest /dev/input/event1
+#
+# scott@smemsh.net
+# https://github.com/smemsh/.xorg
+# https://spdx.org/licenses/GPL-2.0
+#
+###
 
-xkeymap=~/.Xkeymap
-xkbcomp -I$(dirname $(readlink -f $xkeymap))/xkb $xkeymap :0 2>/dev/null
+# key: device, value: setprop input lines
+declare -A inputs
+inputrc  () { inputs["$1"]="$2"; }
+setprop  () { xinput --set-prop "$@" || true; }
+setprops ()
+{
+	input="$1"
+	while read line; do
+		eval props=($line)
+		((${#props[@]} <= 1)) && continue # lead/trailing blanklines
+		setprop "$input" "${props[@]}"
+	done <<< "${inputs["$input"]}"
+}
+
+###
+
+cf_setprops ()
+{
+	source ~/.xinputrc
+	for device in "${!inputs[@]}"; do
+		if xinput --list --name-only | grep -q "^$device"
+		then setprops "$device"; fi; done
+}
+
+cf_keymaps ()
+{
+	xkeymap=~/.Xkeymap
+	xkbcomp \
+		-I$(dirname $(readlink -f $xkeymap))/xkb \
+		$xkeymap \
+		:0 \
+	2>/dev/null
+}
+
+###
+
+main ()
+{
+	cf_setprops
+	cf_keymaps
+}
+
+main "$@"

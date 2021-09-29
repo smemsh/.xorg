@@ -1,0 +1,36 @@
+#
+
+xset m 2 16
+xset r rate 265 85
+
+###
+
+ps2base='DLL096D:01 06CB:CDE6'
+
+trackpad="Apple SPI Touchpad" # mbpr
+touchpad="$ps2base Touchpad" # xps13
+#mouse="$ps2base Mouse" # xps13 internal (notused)
+mouse="PixArt HP USB Optical Mouse" # hpmouse
+
+inputrc "$mouse" "
+'libinput Natural Scrolling Enabled' 0
+'libinput Horizontal Scroll Enabled' 1
+'libinput Accel Speed' 1.0
+'libinput Scroll Method Enabled' 0, 0, 1
+"
+
+inputrc "$touchpad" "
+'libinput Tapping Enabled' 1
+'libinput Tapping Drag Enabled' 1
+'libinput Natural Scrolling Enabled' 1
+'libinput Disable While Typing Enabled' 1
+'libinput Middle Emulation Enabled' 1
+'libinput Horizontal Scroll Enabled' 1
+'libinput Accel Speed' 1.0
+"
+
+# left, right, top, bottom
+inputrc "$trackpad" "'Synaptics Area' -2500 3300 1800 5500"
+
+# min, max, accel, dontuse
+inputrc "$trackpad" "'Synaptics Move Speed' 2.0 6.5 1.3 0"
