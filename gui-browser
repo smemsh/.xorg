@@ -1,4 +1,10 @@
 #!/bin/sh
+#
+# # https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=918433
+# export MESA_GLSL_CACHE_DISABLE=true
+# # UPDATE: was supposed to fix this error, but didn't:
+# # sandbox_linux.cc(374)] : InitializeSandbox() called with multiple threads in process gpu-process.
+# # it means the gpu process isn't sandboxed
 
 brave-browser \
 	--enable-gpu-rasterization \
@@ -6,5 +12,7 @@ brave-browser \
 	--disable-pings \
 	--renderer-process-limit=999 \
 	--ignore-gpu-blacklist \
-	--enable-features=VaapiVideoDecoder \
 	"$@"
+#	--enable-accelerated-video-decode \
+#	--enable-features=VaapiVideoDecoder \
+#	--enable-vulkan \
