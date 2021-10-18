@@ -104,7 +104,7 @@ definekey top M-w               exec rpafter gui-browser --profile-directory="Pr
 definekey top M-p               verbexec ppause chromium
 definekey top M-u               verbexec presume chromium
 definekey top M-i               exec xinvert
-definekey top M-t               exec ratpoison -c "echo $(date +%Y%m%d%H%M%S)"
+definekey top M-t               exec ratpoison -c "echo $(TIMEWARRIORDB=$HOME/.task taskline)"
 
 definekey top M-q               delete
 definekey top M-bracketleft     groups
