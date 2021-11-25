@@ -1,0 +1,8 @@
+#
+
+ignore		seccomp
+seccomp		!chroot
+protocol	unix,inet,netlink
+private		${HOME}/.zoom
+noblacklist	${HOME}/.asoundrc
+whitelist	${HOME}/.asoundrc
