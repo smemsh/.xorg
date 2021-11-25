@@ -10,6 +10,7 @@
       <Program label="urxvt">urxvt</Program>
       <!-- <Menu icon="folder.png" label="apps"> -->
       <Program label="gimp">gimp</Program>
+      <Program label="zoom">firejail zoom</Program>
       <!-- </Menu> -->
       <Separator/>
       <Restart label="restart"/>
