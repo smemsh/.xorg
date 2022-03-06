@@ -116,6 +116,7 @@ definekey top M-comma           exec rpleft
 definekey top M-backslash       exec rprenumber
 definekey top M-slash           select
 definekey top C-slash           gselect
+definekey top M-0               select 0
 
 #
 alias gsel gselect
