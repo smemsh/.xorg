@@ -140,7 +140,7 @@ verbexec sleep 1; urxvtc
 # use a compositor (and composed background) because apps draw better
 #verbexec xsetroot -solid black
 verbexec hsetroot -solid '#000000'
-verbexec compton -b --backend glx --vsync opengl
+verbexec compton -b --backend glx --glx-no-stencil --glx-no-rebind-pixmap --vsync drm
 
 # keyboard, touchpad, mouse, etc
 verbexec xinputs
