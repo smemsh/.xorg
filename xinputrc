@@ -2,6 +2,7 @@
 
 xset m 2 16
 xset r rate 265 85
+xset dpms 0 0 $((10 * 60))
 
 ###
 
