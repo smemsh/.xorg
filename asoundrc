@@ -5,8 +5,9 @@
 pcm.!default {
     type asym
     playback.pcm "plughw:0,0"
-    capture.pcm  "plughw:1" # same as type plug with slave pcm hw:1
+    capture.pcm  "plughw:1" # <-- same as "type plug" with slave pcm hw:1
 }
+
 ctl.!default {
         type hw
         card 0
