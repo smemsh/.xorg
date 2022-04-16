@@ -1,6 +1,6 @@
 #
 
-# GEN3 (omnius6)
+## GEN4 (omnius6)
 #
 pcm.!default {
     type asym
@@ -13,9 +13,9 @@ ctl.!default {
         card 0
 }
 
-## EOF #######################################################################
-
-## GEN2 (hermes?) mbpr 14,1
+### EOF ######################################################################
+#
+## GEN3 (hermes?)
 #
 #pcm.!default {
 #        type plug
@@ -32,8 +32,9 @@ ctl.!default {
 #ctl.!default.type plug
 #ctl.!default.card 1
 #
+### EOF ######################################################################
 #
-## GEN1 (omnius5) thinkpad x61s
+## GEN2 (omnius5)
 #
 #pcm.!default {
 #	type plug
@@ -52,12 +53,12 @@ ctl.!default {
 ##
 #defaults.pcm.rate_converter "speexrate_medium"
 #
-## EOF
-#
-###############################################################################
+### EOF ######################################################################
 #
 ## below do not seem to be needed, default config seems to be
 ## asymmetric with dmix on debian 7
+#
+## GEN1 (omnius5)
 #
 ## changes from default (ie /usr/share/alsa*/*.conf)
 ## - corrects for missing sound channels
