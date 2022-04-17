@@ -1,10 +1,27 @@
 #
 
-## GEN4 (omnius6)
+## GEN5 (omnius6)
+
+# only tested for playback so far, GEN2 was tested for both.
+# addition of dmix should allow multiple audio sources to use
+# the device at the same time.  apparently chrome needs this for
+# different tabs that have a video.
 #
+#
+pcm.dmixed {
+    type plug
+    slave.pcm "dmix:0,0"
+}
+
 pcm.!default {
+
     type asym
-    playback.pcm "plughw:0,0"
+    playback.pcm "dmixed"
+
+    # if, in future, more than one recorder needs access to input audio,
+    # change this to an impromptu pcm of type "plug" that slaves
+    # "dsnoop:1" for capture, ie same way dmix is used for playback
+    #
     capture.pcm  "plughw:1" # <-- same as "type plug" with slave pcm hw:1
 }
 
@@ -13,6 +30,20 @@ ctl.!default {
         card 0
 }
 
+### EOF ######################################################################
+#
+## GEN4 (omnius6?)
+#
+#pcm.!default {
+#    type asym
+#    playback.pcm "plughw:0,0"
+#    capture.pcm  "plughw:1"
+#}
+#ctl.!default {
+#        type hw
+#        card 0
+#}
+#
 ### EOF ######################################################################
 #
 ## GEN3 (hermes?)
