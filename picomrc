@@ -7,3 +7,5 @@ xrender-sync = true;
 
 glx-no-stencil = true;
 glx-no-rebind-pixmap = true;
+
+use-ewmh-active-win = true;
