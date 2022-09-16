@@ -47,7 +47,7 @@ cf_keymaps ()
 	xkbcomp \
 		-I$(dirname $(readlink -f $xkeymap))/xkb \
 		$xkeymap \
-		:0 \
+		${DISPLAY:-:0} \
 	2>/dev/null
 }
 
