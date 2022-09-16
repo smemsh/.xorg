@@ -19,4 +19,4 @@ args=(
 	#--enable-vulkan
 	"$@"
 )
-${args[*]}
+setsid ${args[*]} </dev/null & disown
