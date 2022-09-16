@@ -145,7 +145,7 @@ verbexec xrdb -load ~/.Xresources
 # to hack ratpoison to provide a synchronous exec or some kind of completion
 # barrier command
 #
-verbexec sleep 1; urxvtc
+verbexec sleep 1; rp vrename w; urxvtc; rp vselect 1; rp vrename p; urxvtc; rp vselect 0
 
 # use a compositor (and composed background) because apps draw better
 #verbexec xsetroot -solid black
