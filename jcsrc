@@ -85,8 +85,8 @@ set winname name
 # to maintain the window list if present pre-switch (and not
 # display it if not)
 #
-addhook switchvscreen other
-addhook switchvscreen vscreens
+#addhook switchvscreen other
+#addhook switchvscreen vscreens
 
 #addhook switchwin exec ratpoison -c groups | sed -r 's,^[0-9]*.,,'
 #addhook deletewindow exec # want group name port pid
