@@ -1,5 +1,5 @@
 #
-# ratpoison runcom
+# sdorfehs (nee ratpoison) runcom
 # scott@smemsh.net
 # https://github.com/smemsh/.xorg/
 #
@@ -9,6 +9,8 @@
 
 set startupmessage 0
 set msgwait 0
+set vscreens 2
+set ignoreresizehints 1
 
 chdir
 
@@ -20,10 +22,15 @@ set font inconsolata-14
 
 set fgcolor LightGreen
 set bgcolor Black
+set bargravity ne
+set barsticky 0
+
 set barpadding 0 0
 set barborder 0
 set padding 0 0 0 0
 set waitcursor 1
+
+set winvcur 1
 
 # %a by the application name (resource name),
 # %c by the resource class,
@@ -42,7 +49,7 @@ set waitcursor 1
 # %T by the string Transient, if it is a transient window
 # %w by the width of the window
 # %W by the unit to resize the window horizontally (width_inc)
-# %x by the xine screen number and
+# %x by the xrandr screen number and
 # %% by a single %
 # XXX TODO controlling tty
 # XXX TODO session id, etc (all ps -o)
@@ -62,13 +69,14 @@ set winname name
 # hooks
 #
 #deletewindow	Run after a window is withdrawn.
+#key		Run whenever a top level key is pressed.
 #newwindow	Run after a new window is mapped.
-#key		Run whenever a top level key is pressed.  (by default C-t)
 #quit		Run before exiting ratpoison.
 #restart	Run before restarting ratpoison.
 #switchframe	Run after a frame actually switched, but
 #		before  the window in it is focused.
-#switchgroup	Run after selecting a new group.
+#switchscreen	Run when the user switches to a different screen.
+#switchvscreen	Run when the user switches to a different virtual screen.
 #switchwin	Run after a new window is selected.  (With
 #		dedication, it may already be inactive
 #		again, if it  was put  into  another frame)
@@ -77,8 +85,8 @@ set winname name
 # to maintain the window list if present pre-switch (and not
 # display it if not)
 #
-addhook switchgroup other
-addhook switchgroup groups
+addhook switchvscreen other
+addhook switchvscreen vscreens
 
 #addhook switchwin exec ratpoison -c groups | sed -r 's,^[0-9]*.,,'
 #addhook deletewindow exec # want group name port pid
@@ -89,27 +97,27 @@ undefinekey top C-t
 
 definekey top M-grave           colon
 definekey top M-space           other
-definekey top C-space           gother
-definekey top M-j               gnext
-definekey top M-k               gprev
+definekey top C-space           vother
+definekey top M-j               vnext
+definekey top M-k               vprev
 definekey top M-h               prev
 definekey top M-l               next
 
-definekey top M-P               exec ratpoison -c 'gmove p'; ratpoison -c other; ratpoison -c next
-definekey top M-W               exec ratpoison -c 'gmove w'; ratpoison -c other; ratpoison -c next
-definekey top M-Q               exec ratpoison -c 'gmove q'; ratpoison -c other; ratpoison -c next
+definekey top M-P               exec rp vmove p; rp vother; rp other
+definekey top M-W               exec rp vmove w; rp vother; rp other
+definekey top M-Q               exec rp vmove q; rp vother; rp other
 
 #definekey top M-b               exec ggw `ratpoison -c "prompt search: "`
-definekey top M-b               exec ratpoison -c "echo $(batt)"
+definekey top M-b               exec rp echo $(batt)
 definekey top M-semicolon       exec rpafter gui-browser --new-window --profile-directory="Default"
 definekey top M-w               exec rpafter gui-browser --new-window --profile-directory="Profile 1"
 definekey top M-p               verbexec ppause brave-browser
 definekey top M-u               verbexec presume brave-browser
 definekey top M-i               exec xinvert
-definekey top M-t               exec ratpoison -c "echo $(TIMEWARRIORDB=$HOME/.task taskline)"
+definekey top M-t               exec rp echo "$(TIMEWARRIORDB=$HOME/.task taskline)"
 
 definekey top M-q               delete
-definekey top M-bracketleft     groups
+definekey top M-bracketleft     vscreens
 definekey top M-bracketright    windows
 definekey top M-Return          exec rpafter urxvtc
 definekey top M-apostrophe      title
@@ -117,11 +125,11 @@ definekey top M-period          exec rpright
 definekey top M-comma           exec rpleft
 definekey top M-backslash       exec rprenumber
 definekey top M-slash           select
-definekey top C-slash           gselect
+definekey top C-slash           vselect
 definekey top M-0               select 0
 
 #
-alias gsel gselect
+alias vsel vselect
 
 # rpinit
 # note: should be idempotent, to survive "ratpoison -c restart", etc
