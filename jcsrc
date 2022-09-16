@@ -3,6 +3,8 @@
 # scott@smemsh.net
 # https://github.com/smemsh/.xorg/
 #
+# TODO: comments must start before keyword or get consumed as value tokens
+#
 ##############################################################################
 
 set startupmessage 0
