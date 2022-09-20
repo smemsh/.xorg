@@ -160,6 +160,7 @@ verbexec sleep 1; rp vrename w; urxvtc; rp vselect 1; rp vrename p; urxvtc; rp v
 #verbexec xsetroot -solid black
 verbexec hsetroot -solid '#000000'
 verbexec picom -b
+verbexec setsid xbanish </dev/null &
 
 # keyboard, touchpad, mouse, etc
 verbexec xinputs
