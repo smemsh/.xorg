@@ -3,21 +3,11 @@
 ! scott@smemsh.net
 ! https://github.com/smemsh/.xorg/
 !
-! notes:
-!   - installed-to-server configuration resources
-!   - load in xorg or wm init: xrdb -load or -merge
-!   - use in preference to local-fs-based .Xdefaults
-!   - asof 20151208, only used for URxvt and some Xft defaults
-!
-! syntax:
-!   - WARNING: **NO QUOTES ALLOWED** (even comments!!)
-!   - this file mostly cpp compatible
-!   - XXX TODO what is the actual format? syntax hl says wrong
-!   - some predefined cpp-style macro-constants set by xrdb
-!     XXX TODO which ones? how to find out?
-!
-! good overview, includes all aspects of xorg font config:
-! https://wiki.archlinux.org/index.php/Font_Configuration
+! - installed-to-server configuration resources
+! - load in xorg or wm init: xrdb -load or -merge
+! - use in preference to local-fs-based .Xdefaults
+! - preprocessed by cpp, with some defines (see man page)
+! - unbalanced quotes dangerous on '!' lines so we use C comments
 !
 
 !!! RXVT-UNICODE !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
