@@ -158,5 +158,9 @@ verbexec setsid xbanish </dev/null &
 verbexec xinputs
 verbexec rptmux
 
+# M-m + key -> M-key, since we use already use the meta key for top binds
+verbexec bash -c 'for k in {a..z}; do rp definekey metagen $k meta M-$k; done'
+definekey top M-m readkey metagen
+
 #
 echo rpinit finished
