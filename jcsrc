@@ -162,5 +162,10 @@ verbexec rptmux
 verbexec bash -c 'for k in {a..z}; do rp definekey metagen $k meta M-$k; done'
 definekey top M-m readkey metagen
 
+# S-space seems to be unavailable in curses apps, so we send with Control
+# instead so we can map into application (we prefix+C-Space in tmux)
+#
+definekey top S-s-space exec rpmeta C-q C-space
+
 #
 echo rpinit finished
