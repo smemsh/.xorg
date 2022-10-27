@@ -127,7 +127,7 @@ definekey top M-backslash       exec rprenumber
 definekey top M-slash           select
 definekey top C-slash           vselect
 
-verbexec bash -c 'for n in {0..9}; do rp definekey top M-$n select $n; done'
+verbexec bash -c 'for n in {0..9}; do rp definekey top M-$n select $n; done || echo metas failed'
 
 #
 alias vsel vselect
@@ -159,7 +159,7 @@ verbexec xinputs
 verbexec rptmux
 
 # M-m + key -> M-key, since we use already use the meta key for top binds
-verbexec bash -c 'for k in {a..z}; do rp definekey metagen $k meta M-$k; done'
+verbexec bash -c 'for k in {a..z}; do rp definekey metagen $k meta M-$k; done || echo metagens failed'
 definekey top M-m readkey metagen
 
 # S-space seems to be unavailable in curses apps, so we send with Control
