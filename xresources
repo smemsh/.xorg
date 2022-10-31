@@ -322,3 +322,5 @@ Xcursor.size:			64
 /* Suckless Terminal ********************************************************
  * (reload st after xrdb change with USR1)
  */
+
+St.blinktimeout: 500
