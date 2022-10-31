@@ -329,4 +329,5 @@ St.usebold: 0
 St.cursorstyle: 3
 
 St.foreground: lightgrey
+St.background: black
 St.color7: lightgrey
