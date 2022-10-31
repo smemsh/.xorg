@@ -317,3 +317,8 @@ Xft.minspace:			true
 
 Xcursor.theme:			Adwaita
 Xcursor.size:			64
+
+
+/* Suckless Terminal ********************************************************
+ * (reload st after xrdb change with USR1)
+ */
