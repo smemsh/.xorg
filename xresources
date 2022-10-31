@@ -326,3 +326,4 @@ Xcursor.size:			64
 St.blinktimeout: 500
 St.borderpx: 0
 St.usebold: 0
+St.cursorstyle: 3
