@@ -327,3 +327,6 @@ St.blinktimeout: 500
 St.borderpx: 0
 St.usebold: 0
 St.cursorstyle: 3
+
+St.foreground: lightgrey
+St.color7: lightgrey
