@@ -68,7 +68,7 @@ URxvt.cursorUnderline:		false
 URxvt.cursorBlink:		true
 //   pointerBlank:		boolean
 URxvt.background:		black
-URxvt.foreground:		lightGrey
+URxvt.foreground:		lightgrey
 //   color0:			color
 //   color1:			color
 //   color2:			color
@@ -76,7 +76,7 @@ URxvt.foreground:		lightGrey
 //   color4:			color
 //   color5:			color
 //   color6:			color
-URxvt.color7:			lightGrey
+URxvt.color7:			lightgrey
 //   color8:			color
 //   color9:			color
 //   color10:			color
