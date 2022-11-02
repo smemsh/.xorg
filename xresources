@@ -331,3 +331,5 @@ St.cursorstyle: 5
 St.foreground: lightgrey
 St.background: black
 St.color7: lightgrey
+St.cscolor: yellow
+St.rcscolor: darkblue
