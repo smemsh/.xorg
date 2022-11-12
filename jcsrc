@@ -159,6 +159,7 @@ verbexec xinputs
 verbexec rptmux
 
 # M-m + key -> M-key, since we use already use the meta key for top binds
+newkmap metagen
 verbexec bash -c 'for k in {a..z}; do rp definekey metagen $k meta M-$k; done || echo metagens failed'
 definekey top M-m readkey metagen
 
