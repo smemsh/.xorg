@@ -167,6 +167,3 @@ definekey top M-m readkey metagen
 # instead so we can map into application (we prefix+C-Space in tmux)
 #
 definekey top S-s-space exec rpmeta C-q C-space
-
-#
-echo rpinit finished
