@@ -290,9 +290,9 @@ Xft.dpi:			339
  * [1] https://wiki.archlinux.org/index.php/Font_Configuration#Infinality
  */
 Xft.antialias:			true
-Xft.hinting:			true
-Xft*hintstyle:			hintfull
-Xft.autohint:			true
+Xft.hinting:			false
+Xft*hintstyle:			hintnone
+Xft.autohint:			false
 Xft.rgba:			rgb
 
 //
