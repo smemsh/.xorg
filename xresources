@@ -333,3 +333,6 @@ St.background: black
 St.color7: lightgrey
 St.cscolor: yellow
 St.rcscolor: darkblue
+
+St.cwscale: 0.91
+St.chscale: 0.97
