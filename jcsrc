@@ -119,7 +119,7 @@ definekey top M-t               exec rp echo "$(TIMEWARRIORDB=$HOME/.task taskli
 definekey top M-q               delete
 definekey top M-bracketleft     vscreens
 definekey top M-bracketright    windows
-definekey top M-Return          exec rpafter urxvtc
+definekey top M-Return          exec rpafter st
 definekey top M-apostrophe      title
 definekey top M-period          exec rpright
 definekey top M-comma           exec rpleft
@@ -140,13 +140,13 @@ verbexec xrdb -load ~/.Xresources
 
 # start at least one window during init, or rpafter will fail because no
 # current window exists.  we always start a terminal first thing anyways.
-# sleep to avoid race with xrdb loading the urxvt resources (exec is async)
+# sleep to avoid race with xrdb loading terminal resources (exec is async)
 #
 # TODO this same issue could be a problem for everything else subsequent, need
 # to hack ratpoison to provide a synchronous exec or some kind of completion
 # barrier command
 #
-verbexec sleep 1; rp vrename w; urxvtc; rp vsel 1; rp vrename p; urxvtc; rp vsel 0
+verbexec sleep 1; rp vrename w; st; rp vsel 1; rp vrename p; st; rp vsel 0
 
 # use a compositor (and composed background) because apps draw better
 #verbexec xsetroot -solid black
