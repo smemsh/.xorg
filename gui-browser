@@ -7,6 +7,10 @@
 # # it means the gpu process isn't sandboxed
 
 browser=brave-browser
+
+# in case we forgot and left it paused; harmless if running
+presume $browser
+
 args=(
 	$browser
 	--new-window
