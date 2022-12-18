@@ -14,6 +14,9 @@ set ignoreresizehints 1
 
 chdir
 
+#
+alias vsel vselect
+
 # XXX make this infinite, use readline, load it on start
 set historysize 999
 
@@ -130,7 +133,6 @@ definekey top C-slash           vselect
 verbexec bash -c 'for n in {0..9}; do rp definekey top M-$n select $n; done || echo metas failed'
 
 #
-alias vsel vselect
 
 # rpinit
 # note: should be idempotent, to survive "ratpoison -c restart", etc
