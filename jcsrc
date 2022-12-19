@@ -131,7 +131,46 @@ definekey top M-backslash       exec rprenumber
 definekey top M-slash           select
 definekey top C-slash           vselect
 
-verbexec bash -c 'for n in {0..9}; do rp definekey top M-$n select $n; done || echo metas failed'
+definekey top M-0               select 0
+definekey top M-1               select 1
+definekey top M-2               select 2
+definekey top M-3               select 3
+definekey top M-4               select 4
+definekey top M-5               select 5
+definekey top M-6               select 6
+definekey top M-7               select 7
+definekey top M-8               select 8
+definekey top M-9               select 9
+
+# M-m + key -> M-key, since we use already use the meta key for top binds
+newkmap metagen
+definekey metagen a meta M-a
+definekey metagen b meta M-a
+definekey metagen c meta M-a
+definekey metagen d meta M-a
+definekey metagen e meta M-a
+definekey metagen f meta M-a
+definekey metagen g meta M-a
+definekey metagen h meta M-a
+definekey metagen i meta M-a
+definekey metagen j meta M-a
+definekey metagen k meta M-a
+definekey metagen l meta M-a
+definekey metagen m meta M-a
+definekey metagen n meta M-a
+definekey metagen o meta M-a
+definekey metagen p meta M-a
+definekey metagen q meta M-a
+definekey metagen r meta M-a
+definekey metagen s meta M-a
+definekey metagen t meta M-a
+definekey metagen u meta M-a
+definekey metagen v meta M-a
+definekey metagen w meta M-a
+definekey metagen x meta M-a
+definekey metagen y meta M-a
+definekey metagen z meta M-a
+definekey top M-m readkey metagen
 
 #
 
@@ -160,11 +199,6 @@ verbexec picom -b
 execa xbanish
 exec xinputs
 exec rptmux
-
-# M-m + key -> M-key, since we use already use the meta key for top binds
-newkmap metagen
-verbexec bash -c 'for k in {a..z}; do rp definekey metagen $k meta M-$k; done || echo metagens failed'
-definekey top M-m readkey metagen
 
 # S-space seems to be unavailable in curses apps, so we send with Control
 # instead so we can map into application (we prefix+C-Space in tmux)
