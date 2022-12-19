@@ -112,8 +112,8 @@ definekey top M-Q               exec rp vmove q; rp vother; rp other
 
 #definekey top M-b               exec ggw `ratpoison -c "prompt search: "`
 definekey top M-b               exec rp echo $(batt)
-definekey top M-semicolon       exec rpafter gui-browser --profile-directory="Default"
-definekey top M-w               exec rpafter gui-browser --profile-directory="Profile 1"
+definekey top M-semicolon       execa rpafter gui-browser --profile-directory="Default"
+definekey top M-w               execa rpafter gui-browser --profile-directory="Profile 1"
 definekey top M-p               verbexec ppause brave-browser
 definekey top M-u               verbexec presume brave-browser
 definekey top M-i               exec xinvert
@@ -122,7 +122,7 @@ definekey top M-t               exec rp echo "$(TIMEWARRIORDB=$HOME/.task taskli
 definekey top M-q               delete
 definekey top M-bracketleft     vscreens
 definekey top M-bracketright    windows
-definekey top M-Return          exec rpafter st
+definekey top M-Return          execa rpafter exec st
 definekey top M-apostrophe      title
 definekey top M-period          exec rpright
 definekey top M-comma           exec rpleft
@@ -154,11 +154,11 @@ verbexec sleep 1; rp vrename w; st; rp vsel 1; rp vrename p; st; rp vsel 0
 #verbexec xsetroot -solid black
 verbexec hsetroot -solid '#000000'
 verbexec picom -b
-verbexec setsid xbanish </dev/null &
 
 # keyboard, touchpad, mouse, etc
-verbexec xinputs
-verbexec rptmux
+execa xbanish
+exec xinputs
+exec rptmux
 
 # M-m + key -> M-key, since we use already use the meta key for top binds
 newkmap metagen
