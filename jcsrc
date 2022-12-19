@@ -34,7 +34,7 @@ set padding 0 0 0 0
 set waitcursor 1
 
 # 0 -> st/urxvt, 1 -> urxvtc, but breaks execv
-set winvcur 0
+set winaddcurvscreen 0
 
 # %a by the application name (resource name),
 # %c by the resource class,
