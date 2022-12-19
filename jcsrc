@@ -177,9 +177,10 @@ definekey top M-m readkey metagen
 #
 definekey top S-s-space exec rpmeta C-q C-space
 
-# rpinit
+### RPINIT ###################################################################
+#
 # note: should be idempotent, to survive "ratpoison -c restart", etc
-# note: passed unaltered to 'sh -c' so be sure no bashisms
+# note: exec passed unaltered to 'sh -c' so be sure no bashisms
 
 # use a compositor, otherwise tearing artifacts in some gui apps
 #verbexec xsetroot -solid black
@@ -192,10 +193,17 @@ execw xrdb -load ~/.Xresources
 # start at least one window during init, or rpafter will fail because no
 # current window exists.  we always start a terminal first thing anyways.
 #
-verbexec sleep 1; rp vrename w; st; rp vsel 1; rp vrename p; st; rp vsel 0
+vsel 1
+vrename p
+vsel 0
+vrename w
+execv 0 exec st
+execv 1 exec st
 
 # keyboard, touchpad, mouse, etc
 execa xbanish
 execw xinputs
 exec rptmux
 
+# TODO: rename windows, but hooks don't seem to run from events in rcfile, and
+# setting title of window 0 will race with terminal spawn and win every time
