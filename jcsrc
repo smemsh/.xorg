@@ -172,7 +172,10 @@ definekey metagen y meta M-a
 definekey metagen z meta M-a
 definekey top M-m readkey metagen
 
+# S-space seems to be unavailable in curses apps, so we send with Control
+# instead so we can map into application (we prefix+C-Space in tmux)
 #
+definekey top S-s-space exec rpmeta C-q C-space
 
 # rpinit
 # note: should be idempotent, to survive "ratpoison -c restart", etc
@@ -200,7 +203,3 @@ execa xbanish
 exec xinputs
 exec rptmux
 
-# S-space seems to be unavailable in curses apps, so we send with Control
-# instead so we can map into application (we prefix+C-Space in tmux)
-#
-definekey top S-s-space exec rpmeta C-q C-space
