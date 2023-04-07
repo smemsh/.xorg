@@ -11,6 +11,7 @@ set startupmessage 0
 set msgwait 0
 set vscreens 2
 set ignoreresizehints 1
+set rudeness 31
 
 chdir
 
