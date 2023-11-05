@@ -146,31 +146,31 @@ definekey top M-9               select 9
 # M-m + key -> M-key, since we use already use the meta key for top binds
 newkmap metagen
 definekey metagen a meta M-a
-definekey metagen b meta M-a
-definekey metagen c meta M-a
-definekey metagen d meta M-a
-definekey metagen e meta M-a
-definekey metagen f meta M-a
-definekey metagen g meta M-a
-definekey metagen h meta M-a
-definekey metagen i meta M-a
-definekey metagen j meta M-a
-definekey metagen k meta M-a
-definekey metagen l meta M-a
-definekey metagen m meta M-a
-definekey metagen n meta M-a
-definekey metagen o meta M-a
-definekey metagen p meta M-a
-definekey metagen q meta M-a
-definekey metagen r meta M-a
-definekey metagen s meta M-a
-definekey metagen t meta M-a
-definekey metagen u meta M-a
-definekey metagen v meta M-a
-definekey metagen w meta M-a
-definekey metagen x meta M-a
-definekey metagen y meta M-a
-definekey metagen z meta M-a
+definekey metagen b meta M-b
+definekey metagen c meta M-c
+definekey metagen d meta M-d
+definekey metagen e meta M-e
+definekey metagen f meta M-f
+definekey metagen g meta M-g
+definekey metagen h meta M-h
+definekey metagen i meta M-i
+definekey metagen j meta M-j
+definekey metagen k meta M-k
+definekey metagen l meta M-l
+definekey metagen m meta M-m
+definekey metagen n meta M-n
+definekey metagen o meta M-o
+definekey metagen p meta M-p
+definekey metagen q meta M-q
+definekey metagen r meta M-r
+definekey metagen s meta M-s
+definekey metagen t meta M-t
+definekey metagen u meta M-u
+definekey metagen v meta M-v
+definekey metagen w meta M-w
+definekey metagen x meta M-x
+definekey metagen y meta M-y
+definekey metagen z meta M-z
 definekey top M-m readkey metagen
 
 # S-space seems to be unavailable in curses apps, so we send with Control
