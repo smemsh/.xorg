@@ -68,7 +68,7 @@ set winaddcurvscreen 0
 #   ratpoison to do a real printf template
 #
 #set winfmt %2s %5l %i %T %30t
-set winfmt %2s %5l %n %T %30t
+set winfmt %2s %5l %n %30t
 set winname name
 
 # hooks
