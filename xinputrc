@@ -35,7 +35,7 @@ inputrc "$touchpad_synaptics" "
 'Synaptics Tap Durations'			100, 70, 100
 'Synaptics Tap Action'				2, 3, 0, 0, 1, 3, 2
 'Synaptics Area'				260, 1040, 0, 0
-"
+" # area is 0-1300 left -> right, 0-900 top -> bottom
 
 # on u20 the same device wasn't synaptics-specific
 inputrc "$touchpad_libinput" "
