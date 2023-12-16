@@ -12,15 +12,19 @@ nomatch='FFFFFFF:FF FFFF:FFFF'
 trackpad="Apple SPI Touchpad" # mbpr
 touchpad_libinput="$nomatch Touchpad" # xps13 u20
 touchpad_synaptics="$ps2base Touchpad" # xps13 u22
-#mouse="$ps2base Mouse" # xps13 internal (notused?)
-mouse="PixArt HP USB Optical Mouse" # hpmouse
+#mouse_xps13="$ps2base Mouse" # xps13 internal (notused?)
+mouse_hp_pixart="PixArt HP USB Optical Mouse" # hpmouse
+mouse_hp_optical="USB Optical Mouse " # note trailing space (?!)
 
-inputrc "$mouse" "
+# same setting work for both HP mice
+mouse_hp="
 'libinput Natural Scrolling Enabled' 0
 'libinput Horizontal Scroll Enabled' 1
 'libinput Accel Speed' 1.0
 'libinput Scroll Method Enabled' 0, 0, 1
 "
+inputrc "$mouse_hp_pixart" "$mouse_hp"
+inputrc "$mouse_hp_optical" "$mouse_hp"
 
 # TODO: Device Accel might be better expressed with Synaptics Move Speed
 inputrc "$touchpad_synaptics" "
