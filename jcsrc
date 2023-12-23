@@ -98,6 +98,8 @@ set winname name
 
 ### TOP ######################################################################
 
+# refer to X11/keysymdef.h
+
 undefinekey top C-t
 
 definekey top M-grave           colon
