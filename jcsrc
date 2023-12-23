@@ -147,7 +147,13 @@ definekey top M-8               select 8
 definekey top M-9               select 9
 
 # M-m + key -> M-key, since we use already use the meta key for top binds
+#
+# we need at least:
+# tmux list-keys | grep -P '^.*(M-\S*)\s+' | cut --complement -b 1-28 | field 1
+#
 newkmap metagen
+definekey top M-m readkey metagen
+
 definekey metagen a meta M-a
 definekey metagen b meta M-b
 definekey metagen c meta M-c
@@ -174,7 +180,81 @@ definekey metagen w meta M-w
 definekey metagen x meta M-x
 definekey metagen y meta M-y
 definekey metagen z meta M-z
-definekey top M-m readkey metagen
+
+definekey metagen A meta M-A
+definekey metagen B meta M-B
+definekey metagen C meta M-C
+definekey metagen D meta M-D
+definekey metagen E meta M-E
+definekey metagen F meta M-F
+definekey metagen G meta M-G
+definekey metagen H meta M-H
+definekey metagen I meta M-I
+definekey metagen J meta M-J
+definekey metagen K meta M-K
+definekey metagen L meta M-L
+definekey metagen M meta M-M
+definekey metagen N meta M-N
+definekey metagen O meta M-O
+definekey metagen P meta M-P
+definekey metagen Q meta M-Q
+definekey metagen R meta M-R
+definekey metagen S meta M-S
+definekey metagen T meta M-T
+definekey metagen U meta M-U
+definekey metagen V meta M-V
+definekey metagen W meta M-W
+definekey metagen X meta M-X
+definekey metagen Y meta M-Y
+definekey metagen Z meta M-Z
+
+definekey metagen C-a meta M-C-a
+definekey metagen C-b meta M-C-b
+definekey metagen C-c meta M-C-c
+definekey metagen C-d meta M-C-d
+definekey metagen C-e meta M-C-e
+definekey metagen C-f meta M-C-f
+definekey metagen C-g meta M-C-g
+definekey metagen C-h meta M-C-h
+definekey metagen C-i meta M-C-i
+definekey metagen C-j meta M-C-j
+definekey metagen C-k meta M-C-k
+definekey metagen C-l meta M-C-l
+definekey metagen C-m meta M-C-m
+definekey metagen C-n meta M-C-n
+definekey metagen C-o meta M-C-o
+definekey metagen C-p meta M-C-p
+definekey metagen C-q meta M-C-q
+definekey metagen C-r meta M-C-r
+definekey metagen C-s meta M-C-s
+definekey metagen C-t meta M-C-t
+definekey metagen C-u meta M-C-u
+definekey metagen C-v meta M-C-v
+definekey metagen C-w meta M-C-w
+definekey metagen C-x meta M-C-x
+definekey metagen C-y meta M-C-y
+definekey metagen C-z meta M-C-z
+
+definekey metagen 0 meta M-0
+definekey metagen 1 meta M-1
+definekey metagen 2 meta M-2
+definekey metagen 3 meta M-3
+definekey metagen 4 meta M-4
+definekey metagen 5 meta M-5
+definekey metagen 6 meta M-6
+definekey metagen 7 meta M-7
+definekey metagen 8 meta M-8
+definekey metagen 9 meta M-9
+
+definekey metagen braceleft meta M-braceleft
+definekey metagen braceright meta M-braceright
+definekey metagen greater meta M-greater
+definekey metagen less meta M-less
+
+definekey metagen Up meta M-Up
+definekey metagen Down meta M-Down
+definekey metagen Left meta M-Left
+definekey metagen Right meta M-Right
 
 # S-space seems to be unavailable in curses apps, so we send with Control
 # instead so we can map into application (we prefix+C-Space in tmux)
