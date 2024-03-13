@@ -109,6 +109,8 @@ definekey top M-j               vnext
 definekey top M-k               vprev
 definekey top M-h               prev
 definekey top M-l               next
+definekey top M-N               iprev
+definekey top M-n               inext
 
 definekey top M-P               exec rp vmove p; rp vother; rp other
 definekey top M-W               exec rp vmove w; rp vother; rp other
