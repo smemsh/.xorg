@@ -1,4 +1,6 @@
 #
 
 [options]
+
 fullscreen=1
+scale-images-up=1
