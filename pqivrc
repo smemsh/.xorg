@@ -5,3 +5,6 @@
 fullscreen=1
 scale-images-up=1
 action=toggle_scale_mode(5)
+
+font=0.03
+box-colors=#aaa000:#111111
