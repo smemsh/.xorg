@@ -17,6 +17,11 @@ mouse_hp_pixart="PixArt HP USB Optical Mouse" # hpmouse
 mouse_hp_optical="USB Optical Mouse " # note trailing space (?!)
 
 # same setting work for both HP mice
+#
+# buttons:
+#   1=left-click, 2=scrollwheel-press, 3=right-click,
+#   4=scrollwheel-scrollup, 5=scrollwheel-scrolldown
+#
 mouse_hp="
 'libinput Natural Scrolling Enabled' 0
 'libinput Horizontal Scroll Enabled' 1
