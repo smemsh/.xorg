@@ -112,6 +112,12 @@ definekey top M-l               next
 definekey top M-N               iprev
 definekey top M-n               inext
 
+# moving an arm for the cursor keys is just too slow
+definekey top M-H               meta Left
+definekey top M-J               meta Down
+definekey top M-K               meta Up
+definekey top M-L               meta Right
+
 definekey top M-P               exec rp vmove p; rp vother; rp other
 definekey top M-W               exec rp vmove w; rp vother; rp other
 definekey top M-Q               exec rp vmove q; rp vother; rp other
@@ -135,7 +141,7 @@ definekey top M-comma           exec rpleft
 definekey top M-backslash       exec rprenumber
 definekey top M-slash           select
 definekey top C-slash           vselect
-definekey top M-L               redisplay
+definekey top M-R               redisplay
 
 definekey top M-0               select 0
 definekey top M-1               select 1
