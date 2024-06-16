@@ -23,10 +23,10 @@ mouse_hp_optical="USB Optical Mouse " # note trailing space (?!)
 #   4=scrollwheel-scrollup, 5=scrollwheel-scrolldown
 #
 mouse_hp="
-'libinput Natural Scrolling Enabled' 0
-'libinput Horizontal Scroll Enabled' 1
-'libinput Accel Speed' 1.0
-'libinput Scroll Method Enabled' 0, 0, 1
+'libinput Natural Scrolling Enabled'		0
+'libinput Horizontal Scroll Enabled'		1
+'libinput Accel Speed'				1.0
+'libinput Scroll Method Enabled'		0, 0, 1
 "
 inputrc "$mouse_hp_pixart" "$mouse_hp"
 inputrc "$mouse_hp_optical" "$mouse_hp"
