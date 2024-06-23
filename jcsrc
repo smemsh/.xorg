@@ -129,7 +129,17 @@ definekey top M-w               execa rpafter gui-browser --profile-directory="P
 definekey top M-p               verbexec ppause brave-browser
 definekey top M-u               verbexec presume brave-browser
 definekey top M-i               exec xinvert
-definekey top M-t               exec rp echo "$(TIMEWARRIORDB=$HOME/.task taskline)"
+
+definekey top M-t               exec rptaskline
+definekey top M-S               exec rptaskline timecont
+definekey top M-s               exec rptaskline taskstop
+definekey top M-T               exec rptaskline tasktmp
+definekey top M-x               exec rptaskline timetmp
+definekey top M-V               exec rptaskline tasklast
+definekey top M-v               exec rptaskline timelast
+definekey top M-U               exec rptaskline timeundo
+definekey top M-D               exec rptaskline --prompt taskdo
+definekey top M-d               exec rptaskline --prompt timedo
 
 definekey top M-q               delete
 definekey top M-bracketleft     vscreens
