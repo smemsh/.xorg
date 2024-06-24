@@ -11,9 +11,19 @@ browser=brave-browser
 # in case we forgot and left it paused; harmless if running
 presume $browser
 
+declare -A profiles=(
+	personal Default
+	work "Profile 1"
+)
+
+profile=personal
+[[ $1 == '-w' ]] && { profile=work; shift; }
+[[ $1 == '-p' ]] && shift # default
+
 args=(
 	$browser
 	--new-window
+	--profile-directory="${profiles[$profile]}"
 	--enable-gpu-rasterization
 	--no-default-browser-check
 	--disable-pings
