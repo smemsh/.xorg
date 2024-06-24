@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 #
 # # https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=918433
 # export MESA_GLSL_CACHE_DISABLE=true
