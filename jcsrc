@@ -124,8 +124,8 @@ definekey top M-Q               exec rp vmove q; rp vother; rp other
 
 #definekey top M-b               exec ggw `ratpoison -c "prompt search: "`
 definekey top M-b               exec rp echo $(batt)
-definekey top M-semicolon       execa rpafter gui-browser --profile-directory="Default"
-definekey top M-w               execa rpafter gui-browser --profile-directory="Profile 1"
+definekey top M-semicolon       execa rpafter gui-browser -p
+definekey top M-w               execa rpafter gui-browser -w
 definekey top M-p               verbexec ppause brave-browser
 definekey top M-u               verbexec presume brave-browser
 definekey top M-i               exec xinvert
