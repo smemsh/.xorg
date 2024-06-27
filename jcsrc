@@ -139,6 +139,7 @@ definekey top M-x               exec rptaskline timetmp
 definekey top M-V               exec rptaskline tasklast
 definekey top M-v               exec rptaskline timelast
 definekey top M-U               exec rptaskline timeundo
+definekey top M-e               exec rptaskline taskdone
 definekey top M-D               exec rptaskline --prompt taskdo
 definekey top M-d               exec rptaskline --prompt timedo
 
