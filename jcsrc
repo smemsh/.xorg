@@ -131,10 +131,11 @@ definekey top M-u               verbexec presume brave-browser
 definekey top M-i               exec xinvert
 
 definekey top M-t               exec rptaskline
+definekey top M-T               exec rptaskline taskstop
 definekey top M-r               exec rptaskline rptaskmenu
-definekey top M-S               exec rptaskline timecont
-definekey top M-s               exec rptaskline taskstop
-definekey top M-T               exec rptaskline tasktmp
+definekey top M-S               exec rptaskline taskcont
+definekey top M-s               exec rptaskline timecont
+definekey top M-X               exec rptaskline tasktmp
 definekey top M-x               exec rptaskline timetmp
 definekey top M-V               exec rptaskline tasklast
 definekey top M-v               exec rptaskline timelast
