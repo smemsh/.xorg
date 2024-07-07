@@ -132,6 +132,7 @@ definekey top M-u               verbexec presume brave-browser
 definekey top M-i               exec xinvert
 
 definekey top M-t               exec rptaskline
+definekey top M-c               exec rptaskdesc
 definekey top M-T               exec rptaskline taskstop
 definekey top M-r               exec rptaskline rptaskmenu
 definekey top M-S               exec rptaskline taskcont
