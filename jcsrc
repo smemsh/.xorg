@@ -132,6 +132,7 @@ definekey top M-w               execa rpafter gui-browser -w
 definekey top M-p               verbexec ppause brave-browser
 definekey top M-u               verbexec presume brave-browser
 definekey top M-i               exec xinvert
+definekey top M-asterisk        exec pkill -x -USR1 ptimer
 
 definekey top M-t               exec rptaskline
 definekey top M-c               exec rptaskdesc
