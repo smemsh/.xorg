@@ -138,6 +138,7 @@ definekey top M-t               exec rptaskline
 definekey top M-c               exec rptaskdesc
 definekey top M-T               exec rptaskline taskstop
 definekey top M-r               exec rptaskline rptaskmenu
+definekey top M-R               exec rptaskline rptaskallmenu
 definekey top M-S               exec rptaskline taskcont
 definekey top M-s               exec rptaskline timecont
 definekey top M-X               exec rptaskline tasktmp
@@ -159,7 +160,6 @@ definekey top M-comma           exec rpleft
 definekey top M-backslash       exec rprenumber
 definekey top M-slash           select
 definekey top C-slash           vselect
-definekey top M-R               redisplay
 
 definekey top M-0               select 0
 definekey top M-1               select 1
