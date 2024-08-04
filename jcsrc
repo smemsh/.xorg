@@ -9,7 +9,7 @@
 
 set startupmessage 0
 set msgwait 0
-set vscreens 2
+set vscreens 3
 set ignoreresizehints 1
 set rudeness 31
 
@@ -303,12 +303,15 @@ execw xrdb -load ~/.Xresources
 # start at least one window during init, or rpafter will fail because no
 # current window exists.  we always start a terminal first thing anyways.
 #
+vsel 2
+vrename j
 vsel 1
 vrename p
 vsel 0
 vrename w
 execv 0 exec st
 execv 1 exec st
+execv 3 exec st
 
 # keyboard, touchpad, mouse, etc
 execa xbanish
