@@ -35,6 +35,11 @@ set padding 0 0 0 0
 set waitcursor 1
 
 # 0 -> st/urxvt, 1 -> urxvtc, but breaks execv
+#
+# TODO: we have to set this to 0 during startup but then set it to 1
+# after startup is complete.  doing it in this file does not seem to work.
+# needs more testing and
+#
 set winaddcurvscreen 0
 
 # %a by the application name (resource name),
