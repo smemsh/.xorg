@@ -316,7 +316,7 @@ vsel 0
 vrename w
 execv 0 exec st
 execv 1 exec st
-execv 3 exec st
+execv 2 exec st
 
 # keyboard, touchpad, mouse, etc
 execa xbanish
