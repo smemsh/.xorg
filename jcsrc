@@ -140,7 +140,7 @@ definekey top M-i               exec xinvert
 definekey top M-asterisk        exec pkill -x -USR1 ptimer && rp echo ptimer $(now)
 
 definekey top M-t               exec rptaskline
-definekey top M-c               exec rptaskdesc
+definekey top M-E               exec rptaskdesc
 definekey top M-T               exec rptaskline taskstop
 definekey top M-r               exec rptaskline rptaskmenu
 definekey top M-R               exec rptaskline rptaskallmenu
