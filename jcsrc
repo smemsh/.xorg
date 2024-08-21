@@ -141,6 +141,7 @@ definekey top M-asterisk        exec pkill -x -USR1 ptimer && rp echo ptimer $(n
 
 definekey top M-C               exec rp echo "$(ncal $(thisyear))"
 definekey top M-c               exec rp echo "$(ncal)"
+definekey top M-question        exec rptaskhelp
 definekey top M-t               exec rptaskline
 definekey top M-E               exec rptaskdesc
 definekey top M-T               exec rptaskline taskstop
