@@ -128,7 +128,7 @@ definekey top M-W               exec rp vmove w; rp vother; rp other
 definekey top M-Q               exec rp vmove q; rp vother; rp other
 
 #definekey top M-b               exec ggw `ratpoison -c "prompt search: "`
-definekey top M-a               exec mousepark
+definekey top M-a               exec mousepark --right
 definekey top M-b               exec rp echo $(batt)
 definekey top M-O               exec rp echo $(timeopen)
 definekey top M-M               exec rp echo $(timeline)
