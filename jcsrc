@@ -106,6 +106,7 @@ set winname name
 # refer to X11/keysymdef.h
 
 undefinekey top C-t
+undefinekey top C-a
 
 definekey top M-grave           colon
 definekey top M-space           other
