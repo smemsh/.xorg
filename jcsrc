@@ -144,6 +144,7 @@ definekey top M-C               exec rp echo "$(ncal -Mw $(thisyear))"
 definekey top M-c               exec rp echo "$(ncal -Mw)"
 definekey top M-question        exec rptaskhelp
 definekey top M-t               exec rptaskline
+definekey top M-I               exec TZ=US/Eastern exec rptaskline
 definekey top M-E               exec rptaskdesc
 definekey top M-T               exec rptaskline taskstop
 definekey top M-r               exec rptaskline rptaskmenu
