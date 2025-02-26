@@ -141,7 +141,7 @@ definekey top M-i               exec xinvert
 definekey top M-asterisk        exec pkill -x -USR1 ptimer && rp echo ptimer $(now)
 
 definekey top M-C               exec rp echo "$(ncal -Mw $(thisyear))"
-definekey top M-c               exec rp echo "$(ncal -Mw)"
+definekey top M-c               exec rp echo "$(ncal -Mw | sed -r "s,\\<($(date +%d))\\>,\\1*,")"
 definekey top M-g               exec rp echo "$(tail $HOME/.task/rptaskline.log)"
 definekey top M-question        exec rptaskhelp
 definekey top M-t               exec rptaskline
