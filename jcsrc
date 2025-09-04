@@ -132,7 +132,7 @@ definekey top M-Q               exec rp vmove q; rp vother; rp other
 definekey top M-a               exec mousepark --right
 definekey top M-b               exec rp echo $(batt)
 definekey top M-O               exec rp echo $(timeopen)
-definekey top M-M               exec rp echo $(TZ=US/Eastern timeline)
+definekey top M-M               exec rp echo $(TZ=America/New_York timeline)
 definekey top M-semicolon       execa rpafter gui-browser -p
 definekey top M-w               execa rpafter gui-browser -w
 definekey top M-p               verbexec ppause brave-browser
@@ -145,7 +145,7 @@ definekey top M-c               exec rp echo "$(ncal -Mw | sed -r "0,/^Su/s/\\<(
 definekey top M-g               exec rp echo "$(tail $HOME/.task/rptaskline.log)"
 definekey top M-question        exec rptaskhelp
 definekey top M-t               exec rptaskline
-definekey top M-I               exec TZ=US/Eastern exec rptaskline
+definekey top M-I               exec TZ=America/New_York exec rptaskline
 definekey top M-E               exec rptaskdesc
 definekey top M-T               exec rptaskline taskstop
 definekey top M-r               exec rptaskline rptaskmenu
