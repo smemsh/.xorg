@@ -65,8 +65,10 @@ fontFile ZapfDingbats		/home/scott/.fonts/.xpdf/ZpfDingbats.ttf
 # .pfb, .ttf, and .ttc files in those directories (other files will
 # simply be ignored).
 
-#fontDir		/usr/local/fonts/bakoma
-fontDir /home/scott/.fonts/.xpdf
+# reported as obsoluete by xpopple, which is the version in u24.
+# so, commented out --smemsh-20251003121842
+#
+#fontDir /home/scott/.fonts/.xpdf
 
 #----- PostScript output control
 
@@ -87,15 +89,19 @@ fontDir /home/scott/.fonts/.xpdf
 # Choose the end-of-line convention for multi-line copy-and-past and
 # for pdftotext output.  The available options are unix, mac, and dos.
 
+# reported as obsoluete by xpopple, which is the version in u24.
+# so, commented out --smemsh-20251003121842
+#
 #textEOL		unix
-textEOL		unix
 
 #----- misc settings
 
 # Enable FreeType, and anti-aliased text.
 
+# reported as obsoluete by xpopple, which is the version in u24.
+# so, commented out --smemsh-20251003121842
+#
 #enableFreeType		yes
-enableFreeType		yes
 #antialias		yes
 
 # Set the command used to run a web browser when a URL hyperlink is
