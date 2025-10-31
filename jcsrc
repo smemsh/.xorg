@@ -185,6 +185,8 @@ definekey top M-9               select 9
 
 definekey top M-minus           exec bright down; rp echo $(bright)
 definekey top M-equal           exec bright up; rp echo $(bright)
+definekey top C-M-j             exec voldown
+definekey top C-M-k             exec volup
 
 definekey top M-y               exec mousepaste
 
