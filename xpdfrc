@@ -108,3 +108,4 @@ fontFile ZapfDingbats		/home/scott/.fonts/.xpdf/ZpfDingbats.ttf
 # clicked.
 
 #launchCommand  viewer-script
+urlCommand  "rpafter gui-browser -p '%s'"
