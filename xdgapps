@@ -2,5 +2,6 @@
 
 [Default Applications]
 text/html=elinks.desktop
+text/plain=vim.desktop
 x-scheme-handler/http=elinks.desktop
 x-scheme-handler/https=elinks.desktop

@@ -1,0 +1,16 @@
+#
+
+# despite xdg spec saying we can surround '=' with spaces ("space before and
+# after the equals sign should be ignored") this doesn't work because xdg-open
+# in binary_to_desktop_file() does `grep -E "^Exec(\[[^]=]*])?=" "$file"
+# https://specifications.freedesktop.org/desktop-entry-spec/desktop-entry-spec-latest.html
+
+[Desktop Entry]
+Name=vim
+Exec=vim %U
+Type=Application
+Icon=/usr/share/icons/gnome-colors-common/scalable/apps/vim.svg
+Version=1.5
+MimeType=text/plain
+Terminal=true
+GenericName=Terminal-based Editor
