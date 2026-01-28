@@ -160,6 +160,7 @@ definekey top M-U               exec rptaskline timeundo
 definekey top M-e               exec rptaskline taskdone
 definekey top M-D               exec rptaskline --prompt taskdo
 definekey top M-d               exec rptaskline --prompt timedo
+definekey top M-Y               exec rp echo "$(. ~/.taskenv; COLUMNS=140 timew summary 1day :nocolor)"
 
 definekey top M-q               delete
 definekey top M-bracketleft     vscreens
