@@ -35,6 +35,15 @@ args=(
 	#--v=1
 	#--v=2
 
+	# do not use libsecret even if org.freedesktop.secrets provider is
+	# available on dbus, which it would be if gnome-keyring or keepassxc
+	# was in use, see task def2ba8c, this may be something we want to do
+	# later, but right now we force the basic
+	# TODO: test restart to verify this doesn't wipe our passwords, after
+	# saving our passwords
+	#
+	--password-store=basic
+
 	# todo: eventually we want to use vulkan, but this is a project for
 	# later and may be superseded by wayland if xwayland is good enough
 	# while we transition to qtile
