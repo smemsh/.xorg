@@ -30,6 +30,11 @@ args=(
 	--renderer-process-limit=999
 	--ignore-gpu-blacklist
 
+	# for testing, but not confirmed these actually do anything yet
+	#--enable-logging=stderr
+	#--v=1
+	#--v=2
+
 	# todo: eventually we want to use vulkan, but this is a project for
 	# later and may be superseded by wayland if xwayland is good enough
 	# while we transition to qtile
