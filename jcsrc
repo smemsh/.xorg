@@ -132,6 +132,7 @@ definekey top M-Q               exec rp vmove q; rp vother; rp other
 definekey top M-a               exec mousepark --right
 definekey top M-b               exec rp echo $(batt)
 definekey top M-O               exec rp echo $(timeopen)
+definekey top M-o               exec rp echo $(tmux capture-pane -pT -t '*:1.3' | tail -1)
 definekey top M-M               exec rp echo $(TZ=America/New_York timeline)
 definekey top M-semicolon       execa rpafter gui-browser -p
 definekey top M-w               execa rpafter gui-browser -w
